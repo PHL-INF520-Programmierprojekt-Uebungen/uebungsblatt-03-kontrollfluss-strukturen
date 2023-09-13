@@ -22,5 +22,14 @@ public class MathHelper {
     public int calculateSumOfDigits(final int number) {
         // TODO: Implement this operation
         return 0;
+    /**
+     * Revers engineers and returns the potential numbers for which the <code>number</code> is the sum of digits.
+     * @param number
+     * @return the potential numbers for which the <code>number</code> is  the sum of digits.
+     */
+    public Set<Integer> calculateReverseSumOfDigits(final int number) {
+        // TODO: implement your code here
+        return null;
+    }
     }
 }
