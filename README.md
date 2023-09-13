@@ -44,3 +44,28 @@ Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.
 2. Geben Sie die Summe der Ziffern, die von der Operation `calculateSumOfDigits` berechnet wurde, in der Konsole aus.
 3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen.
 
+## Übung: FizzBuzz
+
+Schreiben Sie ein Programm, das Zahlen von 1 bis 100 ausgibt. Für Vielfache von drei, geben Sie "Fizz" statt der Zahl aus, und für Vielfache von fünf, geben Sie "Buzz" aus. Für Zahlen, die Vielfache von sowohl drei als auch fünf sind, geben Sie "FizzBuzz" aus.
+
+Hier ist ein Beispiel für die ersten Zahlen:
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+...
+
+Implementieren Sie das Programm in der `FizzBuzz` Klasse, die sich im Paket `de.phl.programmingproject.fizzbuzz` befindet.
+
