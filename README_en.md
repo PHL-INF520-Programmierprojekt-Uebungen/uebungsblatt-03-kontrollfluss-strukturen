@@ -14,8 +14,9 @@ Persons younger than 10 years old or less than 1.3 meters tall are not eligible 
 ### Tasks
 
 1. Implement the `isElidibleToRide` operation according to the criteria.
+   - **Note** that `height` is implemented in centimeters!
 2. Discuss whether the operation has difficulties to match the criteria in full detail regarding the return values.
-3. Think of a better solution and implement it.
+3. Think of a better solution and implement it in the method `isEligibleToRideImproved`.
 
 
 ## Exercise: A Strangely Familiar Game
@@ -25,29 +26,29 @@ The game should be located in the `de.phl.programmingproject.game` package.
 Each character has a unique ability that can be activated by pressing a button.
 The available characters are:
 
-- _Mario_: jumps higher than other characters
-- _Luigi_: runs faster than other characters
+- _Mario_: jumps higher than other persons
+- _Luigi_: runs faster than other persons
 - _Princess Peach_: floats in the air for a short period of time
-- _Bowser_: stomps the ground to stun nearby enemies
+- _Bowser_: stomps on the ground to stun nearby enemies
 
-You need to implement the ability activation functionality using Java enums first.
-We will take a look again at this example later when we learn about inheritance.
+You need to implement the ability activation functionality using Java `enums` first.
 
 ### Tasks
 
-1. Create a Java enum called `Person` that contains the following values: `MARIO`, `LUIGI`, `PEACH`, and `BOWSER`. Each value should have a String representation of the persons name ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
+1. Create a Java enum called `Person` that contains the following values: `MARIO`, `LUIGI`, `PEACH`, and `BOWSER`. Each value should have a String representation of the person's `name` ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
 2. Create a Java enum called `Ability` that contains the following values: `JUMP`, `RUN`, `FLOAT`, and `STOMP`.
 3. Create a `GameCharacter` class with an attribute `person` of type `Person` and an operation `activateAbility`.
-   The `activateAbility` operation should provide an parameter `ability` of type `Ability` and return a message that describes the effect of the ability.
+   The `activateAbility` operation should provide a parameter `ability` of type `Ability` and return a message that describes the effect of the ability.
    For example, if the person is `Person.MARIO` and `ability` is `Ability.JUMP`, the message should be "Mario jumps higher than other persons!".
    Also create a constructor for initializing these attributes.
-4. In the `activateAbility` operation, use a switch-expression statement to determine the effect of the ability based on the provided ability argument.
+4. In the `activateAbility` operation, use `switch-case` statement to determine the effect of the ability based on the provided ability argument.
    If the argument matches the person's ability, return the appropriate message.
-   If the ability does not match the person's ability, return a message that indicates that the person does not have that ability.
-5. Create several `GameCharacter` objects with different persons and test the `activateAbility` operation with different abilities to ensure that the switch-case statement is working correctly.
-6. Re-implement the `activateAbility` logic in an `activateAbilityWithIf` operation using if-else statements. Discuss the pros and cons of both implementations.
+   If the ability does not match the person's special ability, return a message that indicates that it only is a regular ability (e.g., "Mario is running", or "Luigi is jumping").
+5. Create the four `GameCharacter` objects with different persons and test the `activateAbility` operation with different abilities in the `main` method of the `Main` class and print out the result to ensure that the `switch-case` statement is working correctly.
+   - create all four `GameCharacter` (_Mario_, _Luigi_, _Princess Peach_, and _Bowser_) and print out the characters' activation of each ability.
+6. Re-implement the `activateAbility` logic in an `activateAbilityWithIf` operation using `if-else `statements. Discuss the pros and cons of both implementations.
 7. Add a new `Person` and `Ability` and adapt both operations.
-   Discuss how well the programm performs with regard to maintance when adding new person?
+   Discuss how well the program performs with regard to maintenance when adding a new person.
 
 
 ## Exercise: Prime Number Sum
@@ -67,7 +68,7 @@ You are tasked with writing a Java program that includes an operation called `in
 The operation takes a positive integer `n` and calculates the sum of its digits.
 For example, the sum of the digits of the number `1234` is `1 + 2 + 3 + 4 = 10`.
 Pay attention to potential preconditions.
-Implement the program in the `MathHelper` package.
+Implement the program in the `MathHelper` class in the `de.phl.programmingproject.math` package.
 
 ### Tasks
 
