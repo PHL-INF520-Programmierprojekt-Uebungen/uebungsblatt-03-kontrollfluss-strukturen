@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Tests for the exercise 'Prime Number Sum' in {@link MathHelper.isPrime}
  */
 public class PrimeNumberSumTest extends TestBase {
+
     static int[] primeNumbers = new int[] {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71};
     @Test
     void task_1_is_prime_number(){
