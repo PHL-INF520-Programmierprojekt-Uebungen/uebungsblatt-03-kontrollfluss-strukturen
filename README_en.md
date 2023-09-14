@@ -83,15 +83,17 @@ You are tasked with writing a Java program that generates a random number betwee
 The program should provide feedback to the user after each guess, telling them whether their guess was too high or too low.
 The program should also keep track of the number of guesses the user has made.
 Implement the program in the `NumberGuesser` class which is located in the `de.phl.programmingproject.math` package.
+
 _Note_: Google how to generate a random number and how to prompt the user for input in the standard command line.
 
 ### Tasks
 
-1. Write a Java program that generates a random number between 1 and 100 and stores it in a variable.
-2. Write a Java program that prompts the user to guess the number and reads the guess from the console.
-3. Write a Java program that uses a do-while loop to repeatedly prompt the user to guess the number until they guess correctly.
-4. Write a Java program that provides feedback to the user after each guess, telling them whether their guess was too high or too low.
-5. Write a Java program that keeps track of the number of guesses the user has made and displays it to the user after they guess correctly.
+Write a Java program that ....
+1. generates a random number between 1 and 100 and stores it in a variable.
+2. prompts the user to guess the number and reads the guess from the console.
+3. uses a `do-while` loop to repeatedly prompt the user to guess the number until they guess correctly.
+4. provides feedback to the user after each guess, telling them whether their guess was too high or too low.
+5. keeps track of the number of guesses the user has made and displays it to the user after they guess correctly.
 
 ## Exercise: FizzBuzz
 
