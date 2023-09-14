@@ -130,9 +130,10 @@ Your task is to analyze the code and identify the correct output of the program.
 
 1. Identify the current output of the program.
 2. Explain the control flow of the program and the exceptions that may be thrown.
-3. Identify the try-catch blocks in the code and explain what they do.
+3. Identify the `try-catch` blocks in the code and explain what they do.
 4. How would you repair the program?
 5. Identify the now correct output of the program.
+6. Submit your answers in a markdown file `pizza_disaster.md` in the root directory.
 
 
 ```java
