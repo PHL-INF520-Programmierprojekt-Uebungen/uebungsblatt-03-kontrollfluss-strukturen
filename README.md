@@ -44,6 +44,26 @@ Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.
 2. Geben Sie die Summe der Ziffern, die von der Operation `calculateSumOfDigits` berechnet wurde, in der Konsole aus.
 3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen.
 
+## Übung: Number Guesser
+
+Ihre Aufgabe besteht darin, ein Java-Programm zu schreiben, das eine zufällige Zahl zwischen 1 und 100 generiert und dem/der Benutzer\*in erlaubt, die Zahl zu erraten.
+Das Programm sollte dem/der Benutzer\*in nach jedem Versuch Feedback geben und ihm mitteilen, ob seine Vermutung zu hoch oder zu
+niedrig war. Das Programm sollte auch die Rate-Anzahl der Benutzer\*innen speichern.
+Implementieren Sie das Programm in der `NumberGuesser`-Klasse im Paket `de.phl.programmingproject.math`.
+
+_Hinweis_: Googeln Sie, wie man eine Zufallszahl generiert und wie man Benutzer*innen in der Standardbefehlszeile (standard command line) zur Eingabe auffordert.
+
+### Aufgaben
+
+Schreiben Sie ein Java-Programm, das ....
+
+1. eine zufällige Zahl zwischen 1 und 100 generiert und sie in einer Variable speichert.
+2. die Benutzer\*innen auffordert, die Zahl zu erraten und die Antwort von der Konsole liest.
+3. eine `do-while` Schleife verwendet, um die Benutzer\*innen wiederholt aufzufordern, die Zahl zu erraten, bis sie richtig
+   geraten wird.
+4. den Benutzer\*innen nach jedem Versuch Feedback gibt und ihnen mitteilt, ob die Antwort zu hoch oder zu niedrig war.
+5. die Anzahl der Versuche der Benutzer\*innen speichert und am Ende ausgibt, wenn die Zahl richtig erraten wurde.
+
 ## Übung: FizzBuzz
 
 Schreiben Sie ein Programm, das Zahlen von 1 bis 100 ausgibt. Für Vielfache von drei, geben Sie "Fizz" statt der Zahl aus, und für Vielfache von fünf, geben Sie "Buzz" aus. Für Zahlen, die Vielfache von sowohl drei als auch fünf sind, geben Sie "FizzBuzz" aus.
