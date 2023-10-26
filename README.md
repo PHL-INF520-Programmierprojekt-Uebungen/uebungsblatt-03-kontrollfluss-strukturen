@@ -25,7 +25,7 @@ wobei `n` auf 20 gesetzt ist. Eine Primzahl ist eine Zahl, die nur durch 1 und s
 
 ### Aufgaben
 
-1. Implementieren Sie die Operation `boolean isPrime(final int n)`, die sich in der Klasse `MathHelper` des Pakets `de.phl.programmingproject.math` befindet.
+1. Implementieren Sie die Operation `boolean isPrime(final int n)` mittels einer `for` Schleife, die sich in der Klasse `MathHelper` des Pakets `de.phl.programmingproject.math` befindet.
 2. Schreiben Sie ein Java-Programm in der Klasse `MathHelper`, das mit einer `while`-Schleife die Summe der ersten 20 Primzahlen berechnet.
 3. Geben Sie die Summe der ersten 20 Primzahlen auf der Konsole aus.
 
@@ -46,23 +46,23 @@ Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.
 
 ## Übung: Number Guesser
 
-Ihre Aufgabe besteht darin, ein Java-Programm zu schreiben, das eine zufällige Zahl zwischen 1 und 100 generiert und dem/der Benutzer\*in erlaubt, die Zahl zu erraten.
-Das Programm sollte dem/der Benutzer\*in nach jedem Versuch Feedback geben und ihm mitteilen, ob seine Vermutung zu hoch oder zu
-niedrig war. Das Programm sollte auch die Rate-Anzahl der Benutzer\*innen speichern.
+Ihre Aufgabe besteht darin, ein Java-Programm zu schreiben, das eine zufällige Zahl zwischen 1 und 100 generiert und dem/der Benutzer&ast;in erlaubt, die Zahl zu erraten.
+Das Programm sollte dem/der Benutzer&ast;in nach jedem Versuch Feedback geben und ihm mitteilen, ob seine Vermutung zu hoch oder zu
+niedrig war. Das Programm sollte auch die Rate-Anzahl der Benutzer&ast;innen speichern.
 Implementieren Sie das Programm in der `NumberGuesser`-Klasse im Paket `de.phl.programmingproject.math`.
 
-_Hinweis_: Googeln Sie, wie man eine Zufallszahl generiert und wie man Benutzer*innen in der Standardbefehlszeile (standard command line) zur Eingabe auffordert.
+_Hinweis_: Recherchieren Sie, wie man eine Zufallszahl generiert und wie man Benutzer*innen in der Standardbefehlszeile (standard command line) zur Eingabe auffordert.
 
 ### Aufgaben
 
 Schreiben Sie ein Java-Programm, das ....
 
 1. eine zufällige Zahl zwischen 1 und 100 generiert und sie in einer Variable speichert.
-2. die Benutzer\*innen auffordert, die Zahl zu erraten und die Antwort von der Konsole liest.
-3. eine `do-while` Schleife verwendet, um die Benutzer\*innen wiederholt aufzufordern, die Zahl zu erraten, bis sie richtig
+2. die Benutzer&ast;innen auffordert, die Zahl zu erraten und die Antwort von der Konsole liest.
+3. eine `do-while` Schleife verwendet, um die Benutzer&ast;innen wiederholt aufzufordern, die Zahl zu erraten, bis sie richtig
    geraten wird.
-4. den Benutzer\*innen nach jedem Versuch Feedback gibt und ihnen mitteilt, ob die Antwort zu hoch oder zu niedrig war.
-5. die Anzahl der Versuche der Benutzer\*innen speichert und am Ende ausgibt, wenn die Zahl richtig erraten wurde.
+4. den Benutzer&ast;innen nach jedem Versuch Feedback gibt und ihnen mitteilt, ob die Antwort zu hoch oder zu niedrig war.
+5. die Anzahl der Versuche der Benutzer&ast;innen speichert und am Ende ausgibt, wenn die Zahl richtig erraten wurde.
 
 ## Übung: FizzBuzz
 
@@ -89,3 +89,184 @@ FizzBuzz
 
 Implementieren Sie das Programm in der `FizzBuzz` Klasse, die sich im Paket `de.phl.programmingproject.fizzbuzz` befindet.
 
+## Übung: Pizza Desaster
+
+In dieser Übung wird Ihnen ein Java-Programm gegeben, das versucht, eine Pizza zu machen.
+Allerdings hat der Code einige Probleme, die zu unerwarteten geworfenen Ausnahmen (exceptions) führen.
+Ihre Aufgabe ist es, den Code zu analysieren und die korrekte Ausgabe des Programms zu ermitteln.
+
+### Aufgaben
+
+1. Ermitteln Sie die aktuelle Ausgabe des Programms.
+2. Erklären Sie den Kontrollfluss des Programms und die Ausnahmen (exceptions), die geworfen werden können.
+3. Identifizieren Sie die `try-catch` Blöcke im Code und erklären Sie, was sie tun.
+4. Wie würden Sie das Programm reparieren?
+5. Ermitteln Sie die nun korrekte Ausgabe des Programms.
+6. Laden Sie Ihre Antworten in einer Markdown-Datei `pizza_disaster.md` im Hauptverzeichnis hoch.
+
+```java
+class Cooking {
+   public static void main(String[] args) {
+      try {
+         String ingredient1 = "flour";
+         String ingredient2 = "water";
+         String ingredient3 = "yeast";
+         String ingredient4 = "salt";
+         String ingredient5 = "sugar";
+         String ingredient6 = "oil";
+         String ingredient7 = "tomato sauce";
+         String ingredient8 = "cheese";
+         int temperature = 425;
+         Dough dough = new Dough(ingredient1, ingredient3, ingredient3, ingredient4, ingredient5, ingredient6);
+         Pizza pizza = new Pizza(dough, ingredient7, ingredient8, temperature);
+         System.out.println(pizza);
+      } catch (Exception e) {
+         System.out.println("An error occurred: " + e.getMessage());
+      }
+   }
+}
+
+class Dough {
+   private String ingredient1;
+   private String ingredient2;
+   private String ingredient3;
+   private String ingredient4;
+   private String ingredient5;
+   private String ingredient6;
+
+   public Dough(String ingredient1, String ingredient2, String ingredient3, String ingredient4, String ingredient5, String ingredient6) {
+      this.ingredient1 = ingredient1;
+      this.ingredient2 = ingredient2;
+      this.ingredient3 = ingredient3;
+      this.ingredient4 = ingredient4;
+      this.ingredient5 = ingredient5;
+      this.ingredient6 = ingredient6;
+   }
+
+   public boolean isMixed() throws MixingException {
+      if (ingredient1.equals("flour") && ingredient2.equals("water") && ingredient3.equals("yeast") && ingredient4.equals("salt") && ingredient5.equals("sugar") && ingredient6.equals("oil")) {
+         return true;
+      } else {
+         throw new MixingException("Dough ingredients are not mixed properly");
+      }
+   }
+}
+
+class Pizza {
+   private Dough dough;
+   private String ingredient7;
+   private String ingredient8;
+   private int temperature;
+
+   public Pizza(Dough dough, String ingredient7, String ingredient8, int temperature) throws CookingException {
+      this.dough = dough;
+      this.ingredient7 = ingredient7;
+      this.ingredient8 = ingredient8;
+      this.temperature = temperature;
+      cook();
+   }
+
+   private void cook() throws CookingException {
+      try {
+         if (!dough.isMixed()) {
+            throw new CookingException("Cannot cook pizza, dough is not mixed properly");
+         }
+         if (temperature < 400 || temperature > 450) {
+            throw new CookingException("Cannot cook pizza, temperature is not within range");
+         }
+         System.out.println("Cooking pizza...");
+      } catch (CookingException e) {
+         throw e;
+      } catch (Exception e) {
+         throw new CookingException("Error cooking pizza: " + e.getMessage());
+      } finally {
+         System.out.println("Pizza is done");
+      }
+   }
+
+   @Override
+   public String toString() {
+      return "Pizza{" +
+              "dough=" + dough +
+              ", ingredient7='" + ingredient7 + '\'' +
+              ", ingredient8='" + ingredient8 + '\'' +
+              ", temperature=" + temperature +
+              '}';
+   }
+}
+
+class MixingException extends Exception {
+   public MixingException(String message) {
+      super(message);
+   }
+}
+
+class CookingException extends Exception {
+   public CookingException(String message) {
+      super(message);
+   }
+}
+```
+
+## Übung: Ausnahmebehandlung (Exception Handling)
+
+Sie bekommen ein Java-Programm mit komplexen, verschachtelten Kontrollflussstrukturen, die Verzweigungen, das Werfen von Ausnahmen und `try-catch`-Anweisungen verwenden.
+Ihre Aufgabe ist es, die Ausgabe des Programms zu ermitteln.
+
+### Aufgaben
+
+1. Ermitteln Sie die aktuelle Ausgabe des Programms.
+2. Identifizieren Sie alle Ausnahmen, die geworfen werden können.
+3. Listen Sie in einer Tabelle für jede Ausnahme, die geworfen werden kann, die Parameter auf, die an die Methode `divide` übergeben werden.
+4. Laden Sie Ihre Antworten in einer Markdown-Datei `exception_handling.md` im Hauptverzeichnis hoch.
+
+### Code
+
+```java
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        try {
+            int result = divide(100, 2);
+            System.out.println("Result is: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static int divide(int x, int y) {
+        int result = 0;
+        try {
+            if (x < 0) {
+                throw new IllegalArgumentException("x must be non-negative");
+            }
+            if (y == 0) {
+                throw new ArithmeticException("Cannot divide by zero");
+            }
+            if (y == 1) {
+                return x;
+            }
+            try {
+                result = x / y;
+            } catch (RuntimeException e) {
+                throw e;
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            } finally {
+                System.out.println("Done with division");
+            }
+            if (result > 100) {
+                throw new ArithmeticException("Result is too large");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (ArithmeticException e) {
+            throw e;
+        } catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        } finally {
+            System.out.println("End of program");
+        }
+        return result;
+    }
+}
+```
