@@ -57,8 +57,8 @@ You are tasked with writing a program that generates the sum of the first `n` pr
 
 ### Tasks
 
-1. Implement the `boolean isPrime(final int n)` operation which is located in the `MathHelper` class of the `de.phl.programmingproject.math` package.
-2. Write a Java program in the `MathHelper` class that generates the sum of the first 20 prime numbers using a while loop.
+1. Implement the `boolean isPrime(final int n)` operation which is located in the `MathHelper` class of the `de.phl.programmingproject.math` package using a `for` loop.
+2. Write a Java program in the `MathHelper` class that generates the sum of the first 20 prime numbers using a `while` loop.
 3. Print the sum of the first 20 prime numbers to the console.
 
 
@@ -72,7 +72,7 @@ Implement the program in the `MathHelper` class in the `de.phl.programmingprojec
 
 ### Tasks
 
-1. Implement the `calculateSumOfDigits` operation to calculate the sum of the digits of the number `867194` using a while loop.
+1. Implement the `calculateSumOfDigits` operation to calculate the sum of the digits of the number `867194` using a `while` loop.
 2. Print the sum of the digits calculated by the `calculateSumOfDigits` operation to the console.
 3. Implement an operation `Set<Integer> calculateReverseSumOfDigits(final int number)` which reverse engineers the potential numbers which `number` is the sum of the digits for and returns them as a set. You only have to consider the numbers up to 10000.
 
@@ -245,6 +245,13 @@ class CookingException extends Exception {
 You are given a Java program with complex nested control flow using branching, throwing of exceptions, and try-catch statements.
 Your task is to identify the output of the program.
 
+### Tasks
+
+1. Identify the current output of the program.
+2. Identify all exceptions that can be thrown by the program.
+3. List all parameters that are passed to the `divide` method for each exception that can be thrown.
+4. Submit your answers (i.e., the output of the program) in a markdown file `exception_handling.md` in the root directory.
+ 
 ### Code
 
 ```java
