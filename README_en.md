@@ -249,7 +249,7 @@ Your task is to identify the output of the program.
 
 1. Identify the current output of the program.
 2. Identify all exceptions that can be thrown by the program.
-3. List all parameters that are passed to the `divide` method for each exception that can be thrown.
+3. List all arguments that are passed to the `divide` method for each exception that can be thrown.
 4. Submit your answers (i.e., the output of the program) in a markdown file `exception_handling.md` in the root directory.
  
 ### Code
@@ -307,14 +307,14 @@ public class ExceptionHandlingExample {
 
 You are tasked with implementing a class to represent a bank account. Your `BankAccount` class has a `balance` field that holds the current balance of the account. The `BankAccount` class also has two operations, `deposit` and `withdraw`, that allow deposits and withdrawals from the account.
 
-(The class is provided as stub in the `de.phl.programmingproject.exceptions` package.
+The class is provided as stub in the `de.phl.programmingproject.exceptions` package.
 However, these operations have not yet been implemented to handle the possible exceptions that may occur when performing these operations.
 
 ### Tasks
 
 1. Update the `BankAccount` class with the following requirements:
     - Modify the `deposit` operation: If the amount to be deposited is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to deposit must be positive".
-    - Modify the `withdraw` operation: If the amount to be withdrawn is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to withdraw must be positive". If the amount to be withdrawn is greater than the current balance, the operation should throw an `InsufficientFundsException` with the message "Insufficient funds for withdrawal". Implement your own `InsufficientFundsException` class.
+    - Modify the `withdraw` operation: If the amount to be withdrawn is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to withdraw must be positive". If the amount to be withdrawn is greater than the current balance, the operation should throw an `InsufficientFundsException` with the message "Insufficient funds for withdrawal". Implement your own `InsufficientFundsException` class in the package `de.phl.programmingproject.exceptions`.
 2. Create a new instance of the `BankAccount` class with a balance of 1000.0.
 3. Call the `deposit` operation with an amount of -500.0 and handle the `IllegalArgumentException` that is thrown by printing the error message to the console.
 4. Call the `deposit` operation with an amount of 500.0 and print the updated balance to the console.
