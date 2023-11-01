@@ -10,10 +10,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class ExceptionHandlingTest {
 
+    private static final String MARKDOWN_FILENAME = "exception_handling.md";
     @Test
     void exception_handling_markdown_file_exists_in_root_directory() {
         // check that the file 'exception_handling.md' exists in the root directory of the project
         // (i.e. in the root or  'src' directory)
-        assertTrue(TestUtils.fileExistsInRootOrSrcDirectory("exception_handling.md"), "The file 'exception_handling.md' does not exist in the root (or './src') directory of the project.");
+        assertTrue(TestUtils.fileExistsInRootOrSrcDirectory(MARKDOWN_FILENAME), "The file '"+MARKDOWN_FILENAME+"' does not exist in the root (or './src') directory of the project.");
+    }
+
+    @Test
+    void task_1_output_correctly_identified(){
+        String txt = TestUtils.getFileContentForFileInRootOrSrcDirectory(MARKDOWN_FILENAME);
+        String expectedOutput ="Done with division\n" +
+                "End of program\n" +
+                "Result is: 50";
+        assertTrue(txt.contains(expectedOutput),
+                "The expected output of the program is not included in your answer.");
     }
 }
