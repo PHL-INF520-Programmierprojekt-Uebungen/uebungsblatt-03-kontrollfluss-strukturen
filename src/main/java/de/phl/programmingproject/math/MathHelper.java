@@ -1,7 +1,13 @@
 package de.phl.programmingproject.math;
 
+import java.util.Set;
+
 public class MathHelper {
 
+    public static void main(String [] args){
+        // TODO: implement your program here
+    }
+    
     /**
      * Calculates the factorial of the given number.
      *
@@ -22,6 +28,8 @@ public class MathHelper {
     public int calculateSumOfDigits(final int number) {
         // TODO: Implement this operation
         return 0;
+    }
+
     /**
      * Revers engineers and returns the potential numbers for which the <code>number</code> is the sum of digits.
      * @param number
@@ -30,6 +38,5 @@ public class MathHelper {
     public Set<Integer> calculateReverseSumOfDigits(final int number) {
         // TODO: implement your code here
         return null;
-    }
     }
 }
