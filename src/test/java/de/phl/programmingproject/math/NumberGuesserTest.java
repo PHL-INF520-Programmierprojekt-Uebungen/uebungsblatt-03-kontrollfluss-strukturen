@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Tests for the 'NumberGuesser' exercise in {@link de.phl.programmingproject.math.NumberGuesser
+ * Tests for the 'NumberGuesser' exercise in {@link de.phl.programmingproject.math.NumberGuesser}
  */
 public class NumberGuesserTest extends TestBase {
     @Test

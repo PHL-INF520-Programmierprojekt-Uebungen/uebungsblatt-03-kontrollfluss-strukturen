@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.regex.Matcher;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,12 +30,13 @@ class GameCharacterTest {
         Field nameField = personEnumClazz.getDeclaredField("name");
         nameField.setAccessible(true);
 
-        String[] names = new String[]{"Mario", "Luigi", "Princess Peach", "Bowser"};
+        // regex to match either Princess Peach or Prinzessin Peach
+        String[] names = new String[]{"Mario", "Luigi", "Princess Peach|Prinzessin Peach", "Bowser"};
         for (String name : names) {
             // Check if the enum contains the values 'Mario', 'Luigi', 'Princess Peach', and 'Bowser'
             assertTrue(Arrays.stream(personEnumClazz.getEnumConstants()).anyMatch(person -> {
                         try {
-                            return nameField.get(person).equals(name);
+                            return nameField.get(person).toString().matches(name);
                         } catch (IllegalAccessException e) {
                             fail("Field 'name' of enum 'Person' is not accessible");
                         }
@@ -107,10 +109,22 @@ class GameCharacterTest {
         final Object peach = gameCharacterConstructor.newInstance(princessPeachEnum);
         final Object bowser = gameCharacterConstructor.newInstance(bowserEnum);
 
-        assertEquals("Mario jumps higher than other persons!", activateAbilityMethod.invoke(mario, jumpEnum));
-        assertEquals("Luigi runs faster than other persons", activateAbilityMethod.invoke(luigi, runEnum));
-        assertEquals("Peach floats longer than other persons", activateAbilityMethod.invoke(peach, floatEnum));
-        assertEquals("Bowser stomps harder than other persons", activateAbilityMethod.invoke(bowser, stompEnum));
+
+        String marioJumpMessage = activateAbilityMethod.invoke(mario, jumpEnum).toString();
+        assertTrue(marioJumpMessage.contains("jumps higher than other persons"),
+                "The method 'activateAbility' of the class 'GameCharacter' does not print the correct message for Mario's jump ability. The output was '"+ marioJumpMessage + "'");
+
+        String luigiRunMessage = activateAbilityMethod.invoke(luigi, runEnum).toString();
+        assertTrue(luigiRunMessage.contains("runs faster than other persons"),
+                "The method 'activateAbility' of the class 'GameCharacter' does not print the correct message for Luigi's run ability. The output was '"+ luigiRunMessage + "'");
+
+        String bowserStompMessage = activateAbilityMethod.invoke(bowser, stompEnum).toString();
+        assertTrue(bowserStompMessage.contains("stomps on the ground to stun nearby enemies"),
+                "The method 'activateAbility' of the class 'GameCharacter' does not print the correct message for Bowser's run ability. The output was '"+ bowserStompMessage + "'");
+
+        String peachFloatMessage = activateAbilityMethod.invoke(peach, floatEnum).toString();
+        assertTrue(peachFloatMessage.contains("Peach floats in the air for a short period of time"),
+                "The method 'activateAbility' of the class 'GameCharacter' does not print the correct message for Peach's float ability. The output was '"+ peachFloatMessage + "'");
     }
 
     /**

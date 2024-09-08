@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Tests for the 'Sum of Digits' exercise in {@link MathHelper}
+ * Tests for the 'Sum of Digits' exercise in {@link MathHelper#calculateSumOfDigits(int)} and {@link MathHelper#calculateReverseSumOfDigits(int)}
  */
 public class SumOfDigitsTest extends TestBase {
     static MathHelper mathHelper = new MathHelper();
