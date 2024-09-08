@@ -7,12 +7,11 @@ public class MathHelper {
     public static void main(String [] args){
         // TODO: implement your program here
     }
-    
+
     /**
-     * Calculates the factorial of the given number.
-     *
-     * @param number The number to calculate the factorial for.
-     * @return The factorial of the given number.
+     * Checks if the given number is a prime number.
+     * @param number The number to check if it is a prime number.
+     * @return <code>true</code> if the given number is a prime number, <code>false</code> otherwise.
      */
     public boolean isPrime(final int number) {
         // TODO: Implement this operation

@@ -18,6 +18,50 @@ Personen, die jünger als 10 Jahre alt oder kleiner als 1,3 Meter sind, sind üb
 2. Diskutieren Sie, ob die Operation in der Lage ist, die Kriterien in vollem Umfang hinsichtlich der Rückgabewerte zu erfüllen.
 3. Überlegen Sie sich eine bessere Lösung und implementieren Sie diese in der Methode `isEligibleToRideImproved`.
 
+## Übung: Ein seltsam vertrautes Spiel
+
+Du entwickelst ein Spiel, in dem die Spieler*innen aus verschiedenen Charakteren wählen können, um als diese zu spielen.
+Das Spiel sollte sich im `de.phl.programmingproject.game` Paket befinden.
+Jeder Charakter hat eine einzigartige Fähigkeit, die durch Drücken einer Taste aktiviert werden kann.
+Die verfügbaren Charaktere sind:
+
+- _Mario_: springt höher als andere Personen (Mario jumps higher than other persons!)
+- _Luigi_: läuft schneller als andere Personen (runs faster than other persons!)
+- _Prinzessin Peach_: schwebt für kurze Zeit in der Luft (floats in the air for a short period of time)
+- _Bowser_: stampft auf den Boden, um nahegelegene Feinde zu betäuben (stomps on the ground to stun nearby enemies)
+
+Du musst zuerst die Funktionalität zur Aktivierung der Fähigkeiten mit Java `enums` implementieren.
+
+### Aufgaben
+
+1. Erstelle ein Java Enum namens `Person`, das die folgenden Werte enthält: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, und `BOWSER`. Jeder Wert sollte eine String-Darstellung des Namens der Person haben ("Mario", "Luigi", "Princess Peach", und "Bowser").
+2. Erstelle ein Java Enum namens `Ability`, das die folgenden Werte enthält: `JUMP`, `RUN`, `FLOAT`, und `STOMP`.
+3. Erstelle eine `GameCharacter` Klasse mit einem Attribut `person` vom Typ `Person` und einer Operation `activateAbility`.
+   Die Operation `activateAbility` sollte einen Parameter `ability` vom Typ `Ability` bereitstellen und eine Nachricht (`String`)  zurückgeben, die die Wirkung der Fähigkeit beschreibt (Signatur und Rückgabetyp: `String activateAbility(final Ability ability)`).
+   Zum Beispiel, wenn die Person `Person.MARIO` ist und `ability` `Ability.JUMP` ist, sollte die Nachricht (auf Englisch) lauten: "Mario jumps higher than other persons!".
+
+   Erstelle auch einen Konstruktor zur Initialisierung dieser Attribute.
+
+   Die erwarteten Nachrichten sind in folgender Tabelle dargestellt:
+
+   | Person         | Ability | Message                                                         |
+   |----------------|---------|-----------------------------------------------------------------|
+   | MARIO          | JUMP    | "Mario jumps higher than other persons!"                        |
+   | LUIGI          | RUN     | "Luigi runs faster than other persons!"                         |
+   | PRINCESS_PEACH | FLOAT   | "Princess Peach floats in the air!"                             |
+   | BOWSER         | STOMP   | "Bowser stomps on the ground to stun nearby enemies!"           |
+
+   
+4. Verwende in der Operation `activateAbility` eine `switch-case` Anweisung, um die Wirkung der Fähigkeit basierend auf dem bereitgestellten Ability-Argument zu bestimmen.
+   Wenn das Argument mit der Fähigkeit der Person übereinstimmt, gib die entsprechende Nachricht zurück.
+   Wenn die Fähigkeit nicht mit der speziellen Fähigkeit der Person übereinstimmt, gib eine Nachricht zurück, die darauf hinweist, dass es sich nur um eine reguläre Fähigkeit handelt (z.B. "Mario is running", oder "Luigi is jumping").
+5. Erstelle die vier `GameCharacter` Objekte mit verschiedenen Personen und teste die Operation `activateAbility` mit verschiedenen Fähigkeiten in der `main` Methode der `Main` Klasse und drucke das Ergebnis aus, um sicherzustellen, dass die `switch-case` Anweisung korrekt funktioniert.
+   - erstelle alle vier `GameCharacter` (_Mario_, _Luigi_, _Prinzessin Peach_, und _Bowser_) und drucke die Aktivierung jeder Fähigkeit der Charaktere aus.
+6. Implementiere die Logik von `activateAbility` in einer Operation `activateAbilityWithIf` mit `if-else` Anweisungen neu. Diskutiere die Vor- und Nachteile beider Implementierungen.
+7. Füge eine neue `Person` und `Ability` hinzu und passe beide Operationen an.
+   Diskutiere, wie gut das Programm in Bezug auf Wartungsfähigkeit funktioniert, wenn eine neue Person hinzugefügt wird.
+
+
 ## Übung: Summe der Primzahlen
 
 Ihre Aufgabe besteht darin, ein Programm zu schreiben, das die Summe der ersten `n` Primzahlen berechnet, 
@@ -30,10 +74,10 @@ wobei `n` auf 20 gesetzt ist. Eine Primzahl ist eine Zahl, die nur durch 1 und s
 3. Geben Sie die Summe der ersten 20 Primzahlen auf der Konsole aus.
 
 
-## Übung: Summe der Ziffern
+## Übung: Quersumme (Summe der Ziffern)
 
 Sie wurden beauftragt, ein Java-Programm zu schreiben, das eine Operation namens `int calculateSumOfDigits(final int number)` beinhaltet.
-Die Operation nimmt eine positive Ganzzahl `n` und berechnet die Summe ihrer Ziffern.
+Die Operation nimmt eine positive Ganzzahl `n` und berechnet die Summe ihrer Ziffern (=Quersumme).
 Zum Beispiel ist die Summe der Ziffern der Zahl `1234` `1 + 2 + 3 + 4 = 10`.
 Achten Sie auf mögliche Vorbedingungen.
 Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.programmingproject.math` Paket.
@@ -42,7 +86,7 @@ Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.
 
 1. Implementieren Sie die Operation `calculateSumOfDigits`, um die Summe der Ziffern der Zahl `867194` mit einer `while`-Schleife zu berechnen.
 2. Geben Sie die Summe der Ziffern, die von der Operation `calculateSumOfDigits` berechnet wurde, in der Konsole aus.
-3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen.
+3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen. Wenn du nicht weißt, wie man mit `Set` arbeitet, kannst du dir hier eine Beschreibung durchlesen: [https://www.geeksforgeeks.org/set-in-java/](https://www.geeksforgeeks.org/set-in-java/) oder [https://www.digitalocean.com/community/tutorials/java-set](https://www.digitalocean.com/community/tutorials/java-set).
 
 ## Übung: Number Guesser
 

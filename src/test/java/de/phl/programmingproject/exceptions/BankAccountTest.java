@@ -36,7 +36,7 @@ public class BankAccountTest extends TestBase {
     @Test
     void task_3_main_method_handles_exception_for_deposit_with_negative_arguments(){
         String out = TestUtils.runActionAndGetSystemOut(() -> BankAccount.main(null));
-        assertTrue(out.contains("java.lang.IllegalArgumentException: Amount must be positive!"), "The 'IllegalArgumentException' thrown by the 'deposit' method is not handled correctly.");
+        assertTrue(out.contains("java.lang.IllegalArgumentException: Amount to deposit must be positive!"), "The 'IllegalArgumentException' thrown by the 'deposit' method is not handled correctly.");
     }
 
     @Test
@@ -48,7 +48,7 @@ public class BankAccountTest extends TestBase {
     @Test
     void task_5_main_method_handles_exception_for_withdraw_with_negative_arguments(){
         String out = TestUtils.runActionAndGetSystemOut(() -> BankAccount.main(null));
-        assertTrue(out.contains("java.lang.IllegalArgumentException: Amount must be positive!"), "The 'IllegalArgumentException' thrown by the 'withdraw' method is not handled correctly.");
+        assertTrue(out.contains("java.lang.IllegalArgumentException: Amount to withdraw must be positive!"), "The 'IllegalArgumentException' thrown by the 'withdraw' method is not handled correctly.");
     }
 
     @Test

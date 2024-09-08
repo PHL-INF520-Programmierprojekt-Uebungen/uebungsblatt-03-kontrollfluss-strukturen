@@ -35,12 +35,23 @@ You need to implement the ability activation functionality using Java `enums` fi
 
 ### Tasks
 
-1. Create a Java enum called `Person` that contains the following values: `MARIO`, `LUIGI`, `PEACH`, and `BOWSER`. Each value should have a String representation of the person's `name` ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
+1. Create a Java enum called `Person` that contains the following values: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, and `BOWSER`. Each value should have a String representation of the person's `name` ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
 2. Create a Java enum called `Ability` that contains the following values: `JUMP`, `RUN`, `FLOAT`, and `STOMP`.
 3. Create a `GameCharacter` class with an attribute `person` of type `Person` and an operation `activateAbility`.
-   The `activateAbility` operation should provide a parameter `ability` of type `Ability` and return a message that describes the effect of the ability.
+   The `activateAbility` operation should provide a parameter `ability` of type `Ability` and return a message (`String`) that describes the effect of the ability (signature and return type: `String activateAbility(final Ability ability)`).
    For example, if the person is `Person.MARIO` and `ability` is `Ability.JUMP`, the message should be "Mario jumps higher than other persons!".
+   
    Also create a constructor for initializing these attributes.
+
+   The expected messages for each person and ability are as follows:
+   
+   | Person         | Ability | Message                                                         |
+   |----------------|---------|-----------------------------------------------------------------|
+   | MARIO          | JUMP    | "Mario jumps higher than other persons!"                        |
+   | LUIGI          | RUN     | "Luigi runs faster than other persons!"                         |
+   | PRINCESS_PEACH | FLOAT   | "Princess Peach floats in the air!"                             |
+   | BOWSER         | STOMP   | "Bowser stomps on the ground to stun nearby enemies!"           |
+
 4. In the `activateAbility` operation, use `switch-case` statement to determine the effect of the ability based on the provided ability argument.
    If the argument matches the person's ability, return the appropriate message.
    If the ability does not match the person's special ability, return a message that indicates that it only is a regular ability (e.g., "Mario is running", or "Luigi is jumping").
@@ -74,7 +85,7 @@ Implement the program in the `MathHelper` class in the `de.phl.programmingprojec
 
 1. Implement the `calculateSumOfDigits` operation to calculate the sum of the digits of the number `867194` using a `while` loop.
 2. Print the sum of the digits calculated by the `calculateSumOfDigits` operation to the console.
-3. Implement an operation `Set<Integer> calculateReverseSumOfDigits(final int number)` which reverse engineers the potential numbers which `number` is the sum of the digits for and returns them as a set. You only have to consider the numbers up to 10000.
+3. Implement an operation `Set<Integer> calculateReverseSumOfDigits(final int number)` which reverse engineers the potential numbers which `number` is the sum of the digits for and returns them as a set. You only have to consider the numbers up to 10000. If you don't know how to work with `Set`, you can take a look at [https://www.geeksforgeeks.org/set-in-java/](https://www.geeksforgeeks.org/set-in-java/) or [https://www.digitalocean.com/community/tutorials/java-set](https://www.digitalocean.com/community/tutorials/java-set).
 
 
 ## Exercise: Number Guesser
