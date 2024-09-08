@@ -1,6 +1,7 @@
 package de.phl.programmingproject.math;
 
 import de.phl.programmingproject.TestBase;
+import de.phl.programmingproject.TestUtils;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -22,9 +23,8 @@ public class PrimeNumberSumTest extends TestBase {
 
     @Test
     void task_3_sum_of_first_twenty_prime_numbers_printed() {
-        this.redirectSystemOut();
-        MathHelper.main(null);
-        assertTrue(this.getSystemOut().contains("639"));
-        this.redirectSystemOut();
+        TestUtils.assertSystemOutMatchesRegex(() -> MathHelper.main(null),
+                "639",
+                "The sum of the first 20 prime numbers is not printed correctly.");
     }
 }

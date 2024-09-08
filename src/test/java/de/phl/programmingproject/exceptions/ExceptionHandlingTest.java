@@ -20,11 +20,10 @@ public class ExceptionHandlingTest {
 
     @Test
     void task_1_output_correctly_identified(){
-        String txt = TestUtils.getFileContentForFileInRootOrSrcDirectory(MARKDOWN_FILENAME);
-        String expectedOutput ="Done with division\n" +
-                "End of program\n" +
-                "Result is: 50";
-        assertTrue(txt.contains(expectedOutput),
+        TestUtils.assertFileContentMatchesRegex(MARKDOWN_FILENAME,
+                "Done with division\n" +
+                        "End of program\n" +
+                        "Result is: 50",
                 "The expected output of the program is not included in your answer.");
     }
 }

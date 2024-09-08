@@ -1,6 +1,7 @@
 package de.phl.programmingproject.math;
 
 import de.phl.programmingproject.TestBase;
+import de.phl.programmingproject.TestUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -24,11 +25,9 @@ public class SumOfDigitsTest extends TestBase {
 
     @Test
     void task_2_sum_of_digits_for_867194_printed(){
-        this.redirectSystemOut();
-        MathHelper.main(null);
-        assertTrue(this.getSystemOut().contains("35"),
-                "The sum of all digits for '867194' was not printed to the console!");
-        this.resetSystemOut();
+        TestUtils.assertSystemOutMatchesRegex(() -> MathHelper.main(null),
+                "35",
+                "The sum of all digits for '867194' is not printed to the console!");
     }
 
     @Test
