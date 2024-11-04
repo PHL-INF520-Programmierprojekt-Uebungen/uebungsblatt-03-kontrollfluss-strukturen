@@ -13,7 +13,7 @@ Persons younger than 10 years old or less than 1.3 meters tall are not eligible 
 
 ### Tasks
 
-1. Implement the `isElidibleToRide` operation according to the criteria.
+1. Implement the `isEligibleToRide` operation according to the criteria.
    - **Note** that `height` is implemented in centimeters!
 2. Discuss whether the operation has difficulties to match the criteria in full detail regarding the return values.
 3. Think of a better solution and implement it in the method `isEligibleToRideImproved`.
