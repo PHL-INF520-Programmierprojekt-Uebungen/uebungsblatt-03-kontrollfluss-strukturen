@@ -13,7 +13,7 @@ Personen, die jünger als 10 Jahre alt oder kleiner als 1,3 Meter sind, sind üb
 
 ### Aufgaben
 
-1. Implementieren Sie die `isElidibleToRide` Operation entsprechend den Kriterien.
+1. Implementieren Sie die `isEligibleToRide` Operation entsprechend den Kriterien.
     - **Beachten Sie**, dass `height` in Zentimetern implementiert ist!
 2. Diskutieren Sie, ob die Operation in der Lage ist, die Kriterien in vollem Umfang hinsichtlich der Rückgabewerte zu erfüllen.
 3. Überlegen Sie sich eine bessere Lösung und implementieren Sie diese in der Methode `isEligibleToRideImproved`.
