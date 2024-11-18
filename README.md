@@ -3,7 +3,7 @@
 
 In diesem Übungsblatt üben Sie verschiedene Kontrollflussstrukturen.
 
-## Übung: Achterbahn
+## Übung 1: Achterbahn
 
 Das Paket `de.phl.programmingproject.rollercoaster` enthält eine `Person` Klasse und eine `RollerCoaster` Klasse.
 Die `RollerCoaster` Klasse hat eine `boolean isEligibleToRide(final Person person)` Operation, die ein `Person` Objekt nimmt und überprüft, ob die Person berechtigt ist, die Achterbahn zu fahren.
@@ -18,7 +18,7 @@ Personen, die jünger als 10 Jahre alt oder kleiner als 1,3 Meter sind, sind üb
 2. Diskutieren Sie, ob die Operation in der Lage ist, die Kriterien in vollem Umfang hinsichtlich der Rückgabewerte zu erfüllen.
 3. Überlegen Sie sich eine bessere Lösung und implementieren Sie diese in der Methode `isEligibleToRideImproved`.
 
-## Übung: Ein seltsam vertrautes Spiel
+## Übung 2: Ein seltsam vertrautes Spiel
 
 Du entwickelst ein Spiel, in dem die Spieler*innen aus verschiedenen Charakteren wählen können, um als diese zu spielen.
 Das Spiel sollte sich im `de.phl.programmingproject.game` Paket befinden.
@@ -55,14 +55,14 @@ Du musst zuerst die Funktionalität zur Aktivierung der Fähigkeiten mit Java `e
 4. Verwende in der Operation `activateAbility` eine `switch-case` Anweisung, um die Wirkung der Fähigkeit basierend auf dem bereitgestellten Ability-Argument zu bestimmen.
    Wenn das Argument mit der Fähigkeit der Person übereinstimmt, gib die entsprechende Nachricht zurück.
    Wenn die Fähigkeit nicht mit der speziellen Fähigkeit der Person übereinstimmt, gib eine Nachricht zurück, die darauf hinweist, dass es sich nur um eine reguläre Fähigkeit handelt (z.B. "Mario is running", oder "Luigi is jumping").
-5. Erstelle die vier `GameCharacter` Objekte mit verschiedenen Personen und teste die Operation `activateAbility` mit verschiedenen Fähigkeiten in der `main` Methode der `Main` Klasse und drucke das Ergebnis aus, um sicherzustellen, dass die `switch-case` Anweisung korrekt funktioniert.
-   - erstelle alle vier `GameCharacter` (_Mario_, _Luigi_, _Prinzessin Peach_, und _Bowser_) und drucke die Aktivierung jeder Fähigkeit der Charaktere aus.
+5. Erstelle die vier `GameCharacter` Objekte mit verschiedenen Personen und teste die Operation `activateAbility` mit verschiedenen Fähigkeiten in der `main` Methode der `Main` Klasse und gib das Ergebnis aus, um sicherzustellen, dass die `switch-case` Anweisung korrekt funktioniert.
+   - erstelle alle vier `GameCharacter` (_Mario_, _Luigi_, _Prinzessin Peach_, und _Bowser_) und gib die Aktivierung jeder Fähigkeit der Charaktere aus.
 6. Implementiere die Logik von `activateAbility` in einer Operation `activateAbilityWithIf` mit `if-else` Anweisungen neu. Diskutiere die Vor- und Nachteile beider Implementierungen.
 7. Füge eine neue `Person` und `Ability` hinzu und passe beide Operationen an.
    Diskutiere, wie gut das Programm in Bezug auf Wartungsfähigkeit funktioniert, wenn eine neue Person hinzugefügt wird.
 
 
-## Übung: Summe der Primzahlen
+## Übung 3: Summe der Primzahlen
 
 Ihre Aufgabe besteht darin, ein Programm zu schreiben, das die Summe der ersten `n` Primzahlen berechnet, 
 wobei `n` auf 20 gesetzt ist. Eine Primzahl ist eine Zahl, die nur durch 1 und sich selbst ohne Rest teilbar ist.
@@ -74,7 +74,7 @@ wobei `n` auf 20 gesetzt ist. Eine Primzahl ist eine Zahl, die nur durch 1 und s
 3. Geben Sie die Summe der ersten 20 Primzahlen auf der Konsole aus.
 
 
-## Übung: Quersumme (Summe der Ziffern)
+## Übung 4: Quersumme (Summe der Ziffern)
 
 Sie wurden beauftragt, ein Java-Programm zu schreiben, das eine Operation namens `int calculateSumOfDigits(final int number)` beinhaltet.
 Die Operation nimmt eine positive Ganzzahl `n` und berechnet die Summe ihrer Ziffern (=Quersumme).
@@ -88,7 +88,7 @@ Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.
 2. Geben Sie die Summe der Ziffern, die von der Operation `calculateSumOfDigits` berechnet wurde, in der Konsole aus.
 3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen. Wenn du nicht weißt, wie man mit `Set` arbeitet, kannst du dir hier eine Beschreibung durchlesen: [https://www.geeksforgeeks.org/set-in-java/](https://www.geeksforgeeks.org/set-in-java/) oder [https://www.digitalocean.com/community/tutorials/java-set](https://www.digitalocean.com/community/tutorials/java-set).
 
-## Übung: Number Guesser
+## Übung 5: Number Guesser
 
 Ihre Aufgabe besteht darin, ein Java-Programm zu schreiben, das eine zufällige Zahl zwischen 1 und 100 generiert und dem/der Benutzer&ast;in erlaubt, die Zahl zu erraten.
 Das Programm sollte dem/der Benutzer&ast;in nach jedem Versuch Feedback geben und ihm mitteilen, ob seine Vermutung zu hoch oder zu
@@ -108,7 +108,7 @@ Schreiben Sie ein Java-Programm, das ....
 4. den Benutzer&ast;innen nach jedem Versuch Feedback gibt und ihnen mitteilt, ob die Antwort zu hoch oder zu niedrig war.
 5. die Anzahl der Versuche der Benutzer&ast;innen speichert und am Ende ausgibt, wenn die Zahl richtig erraten wurde.
 
-## Übung: FizzBuzz
+## Übung 6: FizzBuzz
 
 Schreiben Sie ein Programm, das Zahlen von 1 bis 100 ausgibt. Für Vielfache von drei, geben Sie "Fizz" statt der Zahl aus, und für Vielfache von fünf, geben Sie "Buzz" aus. Für Zahlen, die Vielfache von sowohl drei als auch fünf sind, geben Sie "FizzBuzz" aus.
 
@@ -133,7 +133,7 @@ FizzBuzz
 
 Implementieren Sie das Programm in der `FizzBuzz` Klasse, die sich im Paket `de.phl.programmingproject.fizzbuzz` befindet.
 
-## Übung: Pizza Desaster
+## Übung 7: Pizza Desaster
 
 In dieser Übung wird Ihnen ein Java-Programm gegeben, das versucht, eine Pizza zu machen.
 Allerdings hat der Code einige Probleme, die zu unerwarteten geworfenen Ausnahmen (exceptions) führen.
@@ -252,7 +252,7 @@ class CookingException extends Exception {
 }
 ```
 
-## Übung: Ausnahmebehandlung (Exception Handling)
+## Übung 8: Ausnahmebehandlung (Exception Handling)
 
 Sie bekommen ein Java-Programm mit komplexen, verschachtelten Kontrollflussstrukturen, die Verzweigungen, das Werfen von Ausnahmen und `try-catch`-Anweisungen verwenden.
 Ihre Aufgabe ist es, die Ausgabe des Programms zu ermitteln.
@@ -315,7 +315,7 @@ public class ExceptionHandlingExample {
 }
 ```
 
-## Übung: Bankkonto-Ausnahmen
+## Übung 9: Bankkonto-Ausnahmen
 
 Ihre Aufgabe ist es, eine Klasse zur Darstellung eines Bankkontos zu implementieren. 
 Ihre `BankAccount` Klasse hat ein `balance` Feld, das den aktuellen Kontostand enthält. 
