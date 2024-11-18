@@ -3,16 +3,6 @@ package de.phl.programmingproject.pizza;
 import de.phl.programmingproject.TestUtils;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.regex.Pattern;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-
 /**
  * Test class for the 'Pizza Disaster' exercise.
  */

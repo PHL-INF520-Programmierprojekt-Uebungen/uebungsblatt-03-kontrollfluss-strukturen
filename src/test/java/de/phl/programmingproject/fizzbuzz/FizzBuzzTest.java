@@ -4,8 +4,6 @@ import de.phl.programmingproject.TestBase;
 import de.phl.programmingproject.TestUtils;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 /**
  * Tests for the 'FizzBuzz' exercise in {@link FizzBuzz}.
  */
