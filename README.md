@@ -329,6 +329,14 @@ Diese Operationen wurden jedoch noch nicht implementiert, um die möglichen Ausn
 1. Aktualisieren Sie die `BankAccount` Klasse mit den folgenden Anforderungen:
    - Ändern Sie die `deposit` Operation: Wenn der einzuzahlende Betrag negativ ist, sollte die Operation eine `IllegalArgumentException` mit der Nachricht "Amount to deposit must be positive" werfen.
    - Ändern Sie die `withdraw` Operation: Wenn der abzuhebende Betrag negativ ist, sollte die Operation eine `IllegalArgumentException` mit der Nachricht "Amount to withdraw must be positive" werfen. Wenn der abzuhebende Betrag größer ist als der aktuelle Kontostand, sollte die Operation eine `InsufficientFundsException` mit der Nachricht "Insufficient funds for withdrawal" werfen. Implementieren Sie dafür Ihre eigene `InsufficientFundsException` Klasse im Paket `de.phl.programmingproject.exceptions`.
+     - Als Blaupause können Sie sich an folgender Klasse für eine eigene Exception orientieren:
+        ```Java
+           public class MyException extends Exception {
+               public MyException(String message) {
+                   super(message);
+               }
+           } 
+        ```
 2. Erstellen Sie eine neue Instanz der `BankAccount` Klasse mit einem Kontostand von 1000,0.
 3. Rufen Sie die `deposit` Operation mit einem Betrag von -500,0 auf und behandeln Sie die `IllegalArgumentException`, die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
 4. Rufen Sie die `deposit` Operation mit einem Betrag von 500,0 auf und geben Sie den aktualisierten Kontostand auf der Konsole aus.

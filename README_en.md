@@ -326,6 +326,14 @@ However, these operations have not yet been implemented to handle the possible e
 1. Update the `BankAccount` class with the following requirements:
     - Modify the `deposit` operation: If the amount to be deposited is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to deposit must be positive".
     - Modify the `withdraw` operation: If the amount to be withdrawn is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to withdraw must be positive". If the amount to be withdrawn is greater than the current balance, the operation should throw an `InsufficientFundsException` with the message "Insufficient funds for withdrawal". Implement your own `InsufficientFundsException` class in the package `de.phl.programmingproject.exceptions`.
+      - You can use the following class as a blueprint for your own exception:
+        ```Java
+           public class MyException extends Exception {
+               public MyException(String message) {
+                   super(message);
+               }
+           } 
+        ```
 2. Create a new instance of the `BankAccount` class with a balance of 1000.0.
 3. Call the `deposit` operation with an amount of -500.0 and handle the `IllegalArgumentException` that is thrown by printing the error message to the console.
 4. Call the `deposit` operation with an amount of 500.0 and print the updated balance to the console.

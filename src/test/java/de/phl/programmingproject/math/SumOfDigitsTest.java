@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests for the 'Sum of Digits' exercise in {@link MathHelper#calculateSumOfDigits(int)} and {@link MathHelper#calculateReverseSumOfDigits(int)}
@@ -31,6 +30,8 @@ public class SumOfDigitsTest extends TestBase {
 
     @Test
     void task_3_reverse_sum_of_digits(){
+        assertNotNull(mathHelper.calculateReverseSumOfDigits(10),
+                "The method 'calculateReverseSumOfDigits' returns null instead of the expected Set<Integer>!");
         assertTrue(mathHelper.calculateReverseSumOfDigits(10).containsAll(Arrays.asList(514, 1234)),
                 String.format("The potential numbers for the sum '10' must contain [514, 1234], but was %s",
                         mathHelper.calculateReverseSumOfDigits(10)));
