@@ -1,5 +1,6 @@
 package de.phl.programmingproject.game;
 
+import de.phl.programmingproject.TestUtils;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
@@ -18,7 +19,7 @@ class GameCharacterTest {
 
     @Test
     void task_1_enum_person_implemented() throws NoSuchFieldException, IllegalAccessException {
-        Class<?> personEnumClazz = getClassForName("Person", "de.phl.programmingproject.game");
+        Class<?> personEnumClazz = TestUtils.getClassForName("Person", "de.phl.programmingproject.game");
         assertTrue(personEnumClazz.isEnum(), "Person is not an enum");
 
         try {
@@ -48,7 +49,7 @@ class GameCharacterTest {
 
     @Test
     void task_2_enum_ability_implemented(){
-        Class<?> abilityEnumClazz = getClassForName("Ability", "de.phl.programmingproject.game");
+        Class<?> abilityEnumClazz = TestUtils.getClassForName("Ability", "de.phl.programmingproject.game");
         assertTrue(abilityEnumClazz.isEnum(), "Ability is not an enum");
 
         // check that the values 'JUMP', 'RUN', 'FLOAT', and 'STOMP' exist in the enum
@@ -62,10 +63,10 @@ class GameCharacterTest {
     @Test
     void task_3_game_characters_activate_ability_prints_correctly() throws InvocationTargetException, InstantiationException, IllegalAccessException {
 
-        Class<?> gameCharacterClass = getClassForName("GameCharacter", "de.phl.programmingproject.game");
+        Class<?> gameCharacterClass = TestUtils.getClassForName("GameCharacter", "de.phl.programmingproject.game");
 
         // get the enum 'Person' via reflection
-        Class<?> personEnumClazz = getClassForName("Person", "de.phl.programmingproject.game");
+        Class<?> personEnumClazz = TestUtils.getClassForName("Person", "de.phl.programmingproject.game");
 
         // get the enum with name 'MARIO'
         Object marioEnum = getEnumValue(personEnumClazz, "MARIO");
@@ -80,7 +81,7 @@ class GameCharacterTest {
         Object princessPeachEnum = getEnumValue(personEnumClazz, "PRINCESS_PEACH");
 
         // get the enum 'Ability' via reflection
-        Class<?> abilityEnumClazz = getClassForName("Ability", "de.phl.programmingproject.game");
+        Class<?> abilityEnumClazz = TestUtils.getClassForName("Ability", "de.phl.programmingproject.game");
 
         // get the ability for values 'JUMP', 'RUN', 'FLOAT', and 'STOMP'
         Object jumpEnum = getEnumValue(abilityEnumClazz, "JUMP");
@@ -142,18 +143,4 @@ class GameCharacterTest {
         return null;
     }
 
-    /**
-     * Returns the {@link Class<?>} with the given name in the given package. It fails if the class does not exist.
-     * @param className
-     * @param packageName
-     * @return the {@link Class<?>} with the given name in the given package, or fails the test if the class does not exist
-     */
-    static Class<?> getClassForName(String className, String packageName) {
-        try {
-            return Class.forName(packageName + "." + className);
-        } catch (ClassNotFoundException e) {
-            fail(String.format("Class '%s' does not exist in the package '%s'", className, packageName));
-        }
-        return null;
-    }
 }
