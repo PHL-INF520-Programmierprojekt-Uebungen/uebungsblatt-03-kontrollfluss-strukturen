@@ -3,26 +3,28 @@
 
 In this exercise sheet, you will practice different control flow structures.
 
+
 ## Exercise: Roller Coaster
 
-The package `de.phl.programmingproject.rollercoaster` includes a `Person` class and a `RollerCoaster` class.
-The `RollerCoaster` class has a `boolean isEligibleToRide(final Person person)` operation that takes a `Person` object and checks if the person is eligible to ride the roller coaster.
+The package [`de.phl.programmingproject.rollercoaster`](src/main/java/de/phl/programmingproject/rollercoaster) includes the classes [`Person`](src/main/java/de/phl/programmingproject/rollercoaster/Person.java) and [`RollerCoaster`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java).
+The class [`RollerCoaster`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java) has the method `boolean isEligibleToRide(final Person person)`, which takes a [`Person`](src/main/java/de/phl/programmingproject/rollercoaster/Person.java) object and checks if the person is eligible to ride the roller coaster.
 Eligible on their own are persons which are at least 12 years old and 1.5 meters tall.
 Persons which are at least 10 years old and 1.3 meters tall are eligible too but require an adult.
 Persons younger than 10 years old or less than 1.3 meters tall are not eligible at all to ride the roller coaster.
 
 ### Tasks
 
-1. Implement the `isEligibleToRide` operation according to the criteria.
+1. Implement the [`isEligibleToRide`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java) operation according to the criteria.
    - **Note** that `height` is implemented in centimeters!
 2. Discuss whether the operation has difficulties to match the criteria in full detail regarding the return values.
 3. Think of a better solution and implement it in the method `isEligibleToRideImproved`.
 
 
+
 ## Exercise: A Strangely Familiar Game
 
 You are developing a game where players can choose from different characters to play as.
-The game should be located in the `de.phl.programmingproject.game` package.
+The game is located in the package [`de.phl.programmingproject.game`](src/main/java/de/phl/programmingproject/game).
 Each character has a unique ability that can be activated by pressing a button.
 The available characters are:
 
@@ -31,35 +33,35 @@ The available characters are:
 - _Princess Peach_: floats in the air for a short period of time
 - _Bowser_: stomps on the ground to stun nearby enemies
 
-You need to implement the ability activation functionality using Java `enums` first.
+You need to implement the ability activation functionality using Java [`enums`](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html) first.
 
 ### Tasks
 
-1. Create a Java enum called `Person` that contains the following values: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, and `BOWSER`. Each value should have a String representation of the person's `name` ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
-2. Create a Java enum called `Ability` that contains the following values: `JUMP`, `RUN`, `FLOAT`, and `STOMP`.
-3. Create a `GameCharacter` class with an attribute `person` of type `Person` and an operation `activateAbility`.
-   The `activateAbility` operation should provide a parameter `ability` of type `Ability` and return a message (`String`) that describes the effect of the ability (signature and return type: `String activateAbility(final Ability ability)`).
-   For example, if the person is `Person.MARIO` and `ability` is `Ability.JUMP`, the message should be "Mario jumps higher than other persons!".
+1. Create a Java enum called Person that contains the following values: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, and `BOWSER`. Each value should have a String representation of the person's `name` ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
+2. Create a Java enum called Ability that contains the following values: `JUMP`, `RUN`, `FLOAT`, and `STOMP`.
+3. Create a class [`GameCharacter`](src/test/java/de/phl/programmingproject/game/GameCharacterTest.java) (test only, implementation missing) with an attribute `person` of type Person and an operation `activateAbility(final Ability ability)`.
+    The `activateAbility` operation should provide a parameter `ability` of type Ability and return a message (`String`) that describes the effect of the ability (signature and return type: `String activateAbility(final Ability ability)`).
+    For example, if the person is `Person.MARIO` and `ability` is `Ability.JUMP`, the message should be "Mario jumps higher than other persons!".
    
-   Also create a constructor for initializing these attributes.
+    Also create a constructor for initializing these attributes.
 
-   The expected messages for each person and ability are as follows:
+    The expected messages for each person and ability are as follows:
    
-   | Person         | Ability | Message                                                         |
-   |----------------|---------|-----------------------------------------------------------------|
-   | MARIO          | JUMP    | "Mario jumps higher than other persons!"                        |
-   | LUIGI          | RUN     | "Luigi runs faster than other persons!"                         |
-   | PRINCESS_PEACH | FLOAT   | "Princess Peach floats in the air!"                             |
-   | BOWSER         | STOMP   | "Bowser stomps on the ground to stun nearby enemies!"           |
+    | Person         | Ability | Message                                                         |
+    |----------------|---------|-----------------------------------------------------------------|
+    | MARIO          | JUMP    | "Mario jumps higher than other persons!"                        |
+    | LUIGI          | RUN     | "Luigi runs faster than other persons!"                         |
+    | PRINCESS_PEACH | FLOAT   | "Princess Peach floats in the air!"                             |
+    | BOWSER         | STOMP   | "Bowser stomps on the ground to stun nearby enemies!"           |
 
-4. In the `activateAbility` operation, use `switch-case` statement to determine the effect of the ability based on the provided ability argument.
-   If the argument matches the person's ability, return the appropriate message.
-   If the ability does not match the person's special ability, return a message that indicates that it only is a regular ability (e.g., "Mario is running", or "Luigi is jumping").
-5. Create the four `GameCharacter` objects with different persons and test the `activateAbility` operation with different abilities in the `main` method of the `Main` class and print out the result to ensure that the `switch-case` statement is working correctly.
-   - create all four `GameCharacter` (_Mario_, _Luigi_, _Princess Peach_, and _Bowser_) and print out the characters' activation of each ability.
-6. Re-implement the `activateAbility` logic in an `activateAbilityWithIf` operation using `if-else `statements. Discuss the pros and cons of both implementations.
-7. Add a new `Person` and `Ability` and adapt both operations.
-   Discuss how well the program performs with regard to maintenance when adding a new person.
+4. In the `activateAbility` operation, use a `switch-case` statement to determine the effect of the ability based on the provided ability argument.
+    If the argument matches the person's ability, return the appropriate message.
+    If the ability does not match the person's special ability, return a message that indicates that it only is a regular ability (e.g., "Mario is running", or "Luigi is jumping").
+5. Create the four GameCharacter objects with different persons and test the `activateAbility` operation with different abilities in the [`main`](src/main/java/de/phl/programmingproject/game/Main.java) method of the class [`Main`](src/main/java/de/phl/programmingproject/game/Main.java) and print out the result to ensure that the `switch-case` statement is working correctly.
+    - create all four GameCharacter (_Mario_, _Luigi_, _Princess Peach_, and _Bowser_) and print out the characters' activation of each ability.
+6. Re-implement the logic of `activateAbility` in an `activateAbilityWithIf` operation using `if-else` statements. Discuss the pros and cons of both implementations.
+7. Add a new Person and Ability and adapt both operations.
+    Discuss how well the program performs with regard to maintenance when adding a new person.
 
 
 ## Exercise: Prime Number Sum
@@ -68,8 +70,8 @@ You are tasked with writing a program that generates the sum of the first `n` pr
 
 ### Tasks
 
-1. Implement the `boolean isPrime(final int n)` operation which is located in the `MathHelper` class of the `de.phl.programmingproject.math` package using a `for` loop.
-2. Write a Java program in the `MathHelper` class that generates the sum of the first 20 prime numbers using a `while` loop.
+1. Implement the [`isPrime(final int n)`](src/main/java/de/phl/programmingproject/math/MathHelper.java) operation in the [`MathHelper`](src/main/java/de/phl/programmingproject/math/MathHelper.java) class of the [`de.phl.programmingproject.math`](src/main/java/de/phl/programmingproject/math) package using a `for` loop.
+2. Write a Java program in the [`MathHelper`](src/main/java/de/phl/programmingproject/math/MathHelper.java) class that generates the sum of the first 20 prime numbers using a `while` loop.
 3. Print the sum of the first 20 prime numbers to the console.
 
 
@@ -79,7 +81,7 @@ You are tasked with writing a Java program that includes an operation called `in
 The operation takes a positive integer `n` and calculates the sum of its digits.
 For example, the sum of the digits of the number `1234` is `1 + 2 + 3 + 4 = 10`.
 Pay attention to potential preconditions.
-Implement the program in the `MathHelper` class in the `de.phl.programmingproject.math` package.
+Implement the program in the [`MathHelper`](src/main/java/de/phl/programmingproject/math/MathHelper.java) class in the [`de.phl.programmingproject.math`](src/main/java/de/phl/programmingproject/math) package.
 
 ### Tasks
 
@@ -93,7 +95,7 @@ Implement the program in the `MathHelper` class in the `de.phl.programmingprojec
 You are tasked with writing a Java program that generates a random number between 1 and 100, and allows the user to guess the number.
 The program should provide feedback to the user after each guess, telling them whether their guess was too high or too low.
 The program should also keep track of the number of guesses the user has made.
-Implement the program in the `NumberGuesser` class which is located in the `de.phl.programmingproject.math` package.
+Implement the program in the [`NumberGuesser`](src/main/java/de/phl/programmingproject/math/NumberGuesser.java) class which is located in the [`de.phl.programmingproject.math`](src/main/java/de/phl/programmingproject/math) package.
 
 _Note_: Google how to generate a random number and how to prompt the user for input in the standard command line.
 
@@ -129,7 +131,7 @@ Fizz
 FizzBuzz
 ...
 
-Implement the program in the `FizzBuzz` class which is located in the `de.phl.programmingproject.fizzbuzz` package.
+Implement the program in the [`FizzBuzz`](src/main/java/de/phl/programmingproject/fizzbuzz/FizzBuzz.java) class which is located in the [`de.phl.programmingproject.fizzbuzz`](src/main/java/de/phl/programmingproject/fizzbuzz) package.
 
 ## Exercise: Pizza Disaster
 
@@ -316,17 +318,19 @@ public class ExceptionHandlingExample {
 
 ## Exercise: Banking Account Exceptions
 
-You are tasked with implementing a class to represent a bank account. Your `BankAccount` class has a `balance` field that holds the current balance of the account. The `BankAccount` class also has two operations, `deposit` and `withdraw`, that allow deposits and withdrawals from the account.
+You are tasked with implementing a class to represent a bank account. Your [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) class has a [`balance`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) field that holds the current balance of the account. The `BankAccount` class also has two operations, [`deposit`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) and [`withdraw`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java), that allow deposits and withdrawals from the account.  
+[See the BankAccount class here.](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java)
 
-The class is provided as stub in the `de.phl.programmingproject.exceptions` package.
+
+The class [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) is provided as a stub in the [`de.phl.programmingproject.exceptions`](src/main/java/de/phl/programmingproject/exceptions) package.
 However, these operations have not yet been implemented to handle the possible exceptions that may occur when performing these operations.
 
 ### Tasks
 
-1. Update the `BankAccount` class with the following requirements:
-    - Modify the `deposit` operation: If the amount to be deposited is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to deposit must be positive".
-    - Modify the `withdraw` operation: If the amount to be withdrawn is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to withdraw must be positive". If the amount to be withdrawn is greater than the current balance, the operation should throw an `InsufficientFundsException` with the message "Insufficient funds for withdrawal". Implement your own `InsufficientFundsException` class in the package `de.phl.programmingproject.exceptions`.
-      - You can use the following class as a blueprint for your own exception:
+1. Update the [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) class with the following requirements:
+        - Modify the [`deposit`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) operation: If the amount to be deposited is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to deposit must be positive".
+        - Modify the [`withdraw`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) operation: If the amount to be withdrawn is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to withdraw must be positive". If the amount to be withdrawn is greater than the current balance, the operation should throw an `InsufficientFundsException` with the message "Insufficient funds for withdrawal". Implement your own `InsufficientFundsException` class in the [`de.phl.programmingproject.exceptions`](src/main/java/de/phl/programmingproject/exceptions) package.
+            - You can use the following class as a blueprint for your own exception:
         ```Java
            public class MyException extends Exception {
                public MyException(String message) {
@@ -334,9 +338,9 @@ However, these operations have not yet been implemented to handle the possible e
                }
            } 
         ```
-2. Create a new instance of the `BankAccount` class with a balance of 1000.0.
-3. Call the `deposit` operation with an amount of -500.0 and handle the `IllegalArgumentException` that is thrown by printing the error message to the console.
-4. Call the `deposit` operation with an amount of 500.0 and print the updated balance to the console.
-5. Call the `withdraw` operation with an amount of -200.0 and handle the `IllegalArgumentException` that is thrown by printing the error message to the console.
-6. Call the `withdraw` operation with an amount of 2000.0 and handle the `InsufficientFundsException` that is thrown by printing the error message to the console.
+2. [Create a new instance of the `BankAccount` class with a balance of 1000.0.](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java)
+3. [Call the `deposit` operation with an amount of -500.0 and handle the `IllegalArgumentException` that is thrown by printing the error message to the console.](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java)
+4. [Call the `deposit` operation with an amount of 500.0 and print the updated balance to the console.](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java)
+5. [Call the `withdraw` operation with an amount of -200.0 and handle the `IllegalArgumentException` that is thrown by printing the error message to the console.](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java)
+6. [Call the `withdraw` operation with an amount of 2000.0 and handle the `InsufficientFundsException` that is thrown by printing the error message to the console.](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java)
 7. Call the `withdraw` operation with an amount of 500.0 and print the updated balance to the console.

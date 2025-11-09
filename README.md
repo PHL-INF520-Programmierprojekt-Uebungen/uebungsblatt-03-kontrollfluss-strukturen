@@ -3,25 +3,27 @@
 
 In diesem Übungsblatt üben Sie verschiedene Kontrollflussstrukturen.
 
+
 ## Übung 1: Achterbahn
 
-Das Paket `de.phl.programmingproject.rollercoaster` enthält eine `Person` Klasse und eine `RollerCoaster` Klasse.
-Die `RollerCoaster` Klasse hat eine `boolean isEligibleToRide(final Person person)` Operation, die ein `Person` Objekt nimmt und überprüft, ob die Person berechtigt ist, die Achterbahn zu fahren.
+Das Paket [`de.phl.programmingproject.rollercoaster`](src/main/java/de/phl/programmingproject/rollercoaster) enthält die Klassen [`Person`](src/main/java/de/phl/programmingproject/rollercoaster/Person.java) und Klasse [`RollerCoaster`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java).
+Die Klasse [`RollerCoaster`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java) hat die Methode [`boolean isEligibleToRide(final Person person)`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java), die ein [`Person`](src/main/java/de/phl/programmingproject/rollercoaster/Person.java) Objekt nimmt und überprüft, ob die Person berechtigt ist, die Achterbahn zu fahren.
 Alleine berechtigt sind Personen, die mindestens 12 Jahre alt und 1,5 Meter groß sind.
 Personen, die mindestens 10 Jahre alt und 1,3 Meter groß sind, sind ebenfalls berechtigt, benötigen aber einen Erwachsenen.
 Personen, die jünger als 10 Jahre alt oder kleiner als 1,3 Meter sind, sind überhaupt nicht berechtigt, die Achterbahn zu fahren.
 
 ### Aufgaben
 
-1. Implementieren Sie die `isEligibleToRide` Operation entsprechend den Kriterien.
+1. Implementieren Sie die [`isEligibleToRide`](src/main/java/de/phl/programmingproject/rollercoaster/RollerCoaster.java) Operation entsprechend den Kriterien.
     - **Beachten Sie**, dass `height` in Zentimetern implementiert ist!
 2. Diskutieren Sie, ob die Operation in der Lage ist, die Kriterien in vollem Umfang hinsichtlich der Rückgabewerte zu erfüllen.
 3. Überlegen Sie sich eine bessere Lösung und implementieren Sie diese in der Methode `isEligibleToRideImproved`.
 
+
 ## Übung 2: Ein seltsam vertrautes Spiel
 
 Du entwickelst ein Spiel, in dem die Spieler*innen aus verschiedenen Charakteren wählen können, um als diese zu spielen.
-Das Spiel sollte sich im `de.phl.programmingproject.game` Paket befinden.
+Das Spiel befindet sich im Paket [`de.phl.programmingproject.game`](src/main/java/de/phl/programmingproject/game).
 Jeder Charakter hat eine einzigartige Fähigkeit, die durch Drücken einer Taste aktiviert werden kann.
 Die verfügbaren Charaktere sind:
 
@@ -30,14 +32,14 @@ Die verfügbaren Charaktere sind:
 - _Prinzessin Peach_: schwebt für kurze Zeit in der Luft (floats in the air for a short period of time)
 - _Bowser_: stampft auf den Boden, um nahegelegene Feinde zu betäuben (stomps on the ground to stun nearby enemies)
 
-Du musst zuerst die Funktionalität zur Aktivierung der Fähigkeiten mit Java `enums` implementieren.
+Du musst zuerst die Funktionalität zur Aktivierung der Fähigkeiten mit Java [`enums`](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html) implementieren.
 
 ### Aufgaben
 
-1. Erstelle ein Java Enum namens `Person`, das die folgenden Werte enthält: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, und `BOWSER`. Jeder Wert sollte eine String-Darstellung des Namens der Person haben ("Mario", "Luigi", "Princess Peach", und "Bowser").
+1. Erstelle ein Java Enum namens `Person` das die folgenden Werte enthält: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, und `BOWSER`. Jeder Wert sollte eine String-Darstellung des Namens der Person haben ("Mario", "Luigi", "Princess Peach", und "Bowser").
 2. Erstelle ein Java Enum namens `Ability`, das die folgenden Werte enthält: `JUMP`, `RUN`, `FLOAT`, und `STOMP`.
-3. Erstelle eine `GameCharacter` Klasse mit einem Attribut `person` vom Typ `Person` und einer Operation `activateAbility`.
-   Die Operation `activateAbility` sollte einen Parameter `ability` vom Typ `Ability` bereitstellen und eine Nachricht (`String`)  zurückgeben, die die Wirkung der Fähigkeit beschreibt (Signatur und Rückgabetyp: `String activateAbility(final Ability ability)`).
+3. Erstelle eine Klasse `GameCharacter` mit einem Attribut `person` vom Typ `Person` und einer Methode `activateAbility(final Ability ability)`.
+   Die Methode sollte eine Nachricht (`String`) zurückgeben, die die Wirkung der Fähigkeit beschreibt (Signatur: `String activateAbility(final Ability ability)`).
    Zum Beispiel, wenn die Person `Person.MARIO` ist und `ability` `Ability.JUMP` ist, sollte die Nachricht (auf Englisch) lauten: "Mario jumps higher than other persons!".
 
    Erstelle auch einen Konstruktor zur Initialisierung dieser Attribute.
@@ -51,14 +53,13 @@ Du musst zuerst die Funktionalität zur Aktivierung der Fähigkeiten mit Java `e
    | PRINCESS_PEACH | FLOAT   | "Princess Peach floats in the air!"                             |
    | BOWSER         | STOMP   | "Bowser stomps on the ground to stun nearby enemies!"           |
 
-   
-4. Verwende in der Operation `activateAbility` eine `switch-case` Anweisung, um die Wirkung der Fähigkeit basierend auf dem bereitgestellten Ability-Argument zu bestimmen.
+4. Verwende in der Methode `activateAbility` eine `switch-case` Anweisung, um die Wirkung der Fähigkeit basierend auf dem bereitgestellten Ability-Argument zu bestimmen.
    Wenn das Argument mit der Fähigkeit der Person übereinstimmt, gib die entsprechende Nachricht zurück.
    Wenn die Fähigkeit nicht mit der speziellen Fähigkeit der Person übereinstimmt, gib eine Nachricht zurück, die darauf hinweist, dass es sich nur um eine reguläre Fähigkeit handelt (z.B. "Mario is running", oder "Luigi is jumping").
-5. Erstelle die vier `GameCharacter` Objekte mit verschiedenen Personen und teste die Operation `activateAbility` mit verschiedenen Fähigkeiten in der `main` Methode der `Main` Klasse und gib das Ergebnis aus, um sicherzustellen, dass die `switch-case` Anweisung korrekt funktioniert.
-   - erstelle alle vier `GameCharacter` (_Mario_, _Luigi_, _Prinzessin Peach_, und _Bowser_) und gib die Aktivierung jeder Fähigkeit der Charaktere aus.
-6. Implementiere die Logik von `activateAbility` in einer Operation `activateAbilityWithIf` mit `if-else` Anweisungen neu. Diskutiere die Vor- und Nachteile beider Implementierungen.
-7. Füge eine neue `Person` und `Ability` hinzu und passe beide Operationen an.
+5. Erstelle die vier `GameCharacter` Objekte mit verschiedenen Personen und teste die Methode`activateAbility` mit verschiedenen Fähigkeiten in der [`main`](src/main/java/de/phl/programmingproject/game/Main.java) Methode der Klasse [`Main`](src/main/java/de/phl/programmingproject/game/Main.java) und gib das Ergebnis aus, um sicherzustellen, dass die `switch-case` Anweisung korrekt funktioniert.
+   - Erstelle alle vier `GameCharacter` (_Mario_, _Luigi_, _Prinzessin Peach_, und _Bowser_) und gib die Aktivierung jeder Fähigkeit der Charaktere aus.
+6. Implementiere die Logik von `activateAbility` in einer Methode `activateAbilityWithIf` mit `if-else` Anweisungen neu. Diskutiere die Vor- und Nachteile beider Implementierungen.
+7. Füge eine neue `Person` und `Ability` hinzu und passe beide Methoden an.
    Diskutiere, wie gut das Programm in Bezug auf Wartungsfähigkeit funktioniert, wenn eine neue Person hinzugefügt wird.
 
 
@@ -69,31 +70,34 @@ wobei `n` auf 20 gesetzt ist. Eine Primzahl ist eine Zahl, die nur durch 1 und s
 
 ### Aufgaben
 
-1. Implementieren Sie die Operation `boolean isPrime(final int n)` mittels einer `for` Schleife, die sich in der Klasse `MathHelper` des Pakets `de.phl.programmingproject.math` befindet.
+1. Implementieren Sie die Operation [`boolean isPrime(final int n)`](src/main/java/de/phl/programmingproject/math/MathHelper.java) mittels einer `for` Schleife, die sich in der Klasse [`MathHelper`](src/main/java/de/phl/programmingproject/math/MathHelper.java) des Pakets [`de.phl.programmingproject.math`](src/main/java/de/phl/programmingproject/math) befindet.
 2. Schreiben Sie ein Java-Programm in der Klasse `MathHelper`, das mit einer `while`-Schleife die Summe der ersten 20 Primzahlen berechnet.
 3. Geben Sie die Summe der ersten 20 Primzahlen auf der Konsole aus.
 
 
 ## Übung 4: Quersumme (Summe der Ziffern)
 
-Sie wurden beauftragt, ein Java-Programm zu schreiben, das eine Operation namens `int calculateSumOfDigits(final int number)` beinhaltet.
+Sie wurden beauftragt, ein Java-Programm zu schreiben, das eine Operation namens [`int calculateSumOfDigits(final int number)`](src/main/java/de/phl/programmingproject/math/MathHelper.java) beinhaltet.
 Die Operation nimmt eine positive Ganzzahl `n` und berechnet die Summe ihrer Ziffern (=Quersumme).
 Zum Beispiel ist die Summe der Ziffern der Zahl `1234` `1 + 2 + 3 + 4 = 10`.
 Achten Sie auf mögliche Vorbedingungen.
-Implementieren Sie das Programm Implement in der `MathHelper` Klasse im `de.phl.programmingproject.math` Paket.
+Implementieren Sie das Programm in der [`MathHelper`](src/main/java/de/phl/programmingproject/math/MathHelper.java) Klasse im [`de.phl.programmingproject.math`](src/main/java/de/phl/programmingproject/math) Paket.
 
 ### Aufgaben
 
-1. Implementieren Sie die Operation `calculateSumOfDigits`, um die Summe der Ziffern der Zahl `867194` mit einer `while`-Schleife zu berechnen.
-2. Geben Sie die Summe der Ziffern, die von der Operation `calculateSumOfDigits` berechnet wurde, in der Konsole aus.
-3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen. Wenn du nicht weißt, wie man mit `Set` arbeitet, kannst du dir hier eine Beschreibung durchlesen: [https://www.geeksforgeeks.org/set-in-java/](https://www.geeksforgeeks.org/set-in-java/) oder [https://www.digitalocean.com/community/tutorials/java-set](https://www.digitalocean.com/community/tutorials/java-set).
+1. Implementieren Sie die Operation [`calculateSumOfDigits`](src/main/java/de/phl/programmingproject/math/MathHelper.java), um die Summe der Ziffern der Zahl `867194` mit einer `while`-Schleife zu berechnen.
+2. Geben Sie die Summe der Ziffern, die von der Operation [`calculateSumOfDigits`](src/main/java/de/phl/programmingproject/math/MathHelper.java) berechnet wurde, in der Konsole aus.
+3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen.  
+Wenn Sie nicht wissen, wie man mit `Set` arbeitet, können Sie sich hier eine Beschreibung durchlesen:  
+- [Set in Java (GeeksforGeeks)](https://www.geeksforgeeks.org/set-in-java/)  
+- [Java Set Tutorial (DigitalOcean)](https://www.digitalocean.com/community/tutorials/java-set)
 
 ## Übung 5: Number Guesser
 
 Ihre Aufgabe besteht darin, ein Java-Programm zu schreiben, das eine zufällige Zahl zwischen 1 und 100 generiert und dem/der Benutzer&ast;in erlaubt, die Zahl zu erraten.
 Das Programm sollte dem/der Benutzer&ast;in nach jedem Versuch Feedback geben und ihm mitteilen, ob seine Vermutung zu hoch oder zu
 niedrig war. Das Programm sollte auch die Rate-Anzahl der Benutzer&ast;innen speichern.
-Implementieren Sie das Programm in der `NumberGuesser`-Klasse im Paket `de.phl.programmingproject.math`.
+Implementieren Sie das Programm in der [`NumberGuesser`](src/main/java/de/phl/programmingproject/math/NumberGuesser.java)-Klasse im Paket [`de.phl.programmingproject.math`](src/main/java/de/phl/programmingproject/math).
 
 _Hinweis_: Recherchieren Sie, wie man eine Zufallszahl generiert und wie man Benutzer*innen in der Standardbefehlszeile (standard command line) zur Eingabe auffordert.
 
@@ -131,7 +135,7 @@ Fizz
 FizzBuzz
 ...
 
-Implementieren Sie das Programm in der `FizzBuzz` Klasse, die sich im Paket `de.phl.programmingproject.fizzbuzz` befindet.
+Implementieren Sie das Programm in der [`FizzBuzz`](src/main/java/de/phl/programmingproject/fizzbuzz/FizzBuzz.java) Klasse, die sich im Paket [`de.phl.programmingproject.fizzbuzz`](src/main/java/de/phl/programmingproject/fizzbuzz) befindet.
 
 ## Übung 7: Pizza Desaster
 
@@ -337,9 +341,9 @@ Diese Operationen wurden jedoch noch nicht implementiert, um die möglichen Ausn
                }
            } 
         ```
-2. Erstellen Sie eine neue Instanz der `BankAccount` Klasse mit einem Kontostand von 1000,0.
-3. Rufen Sie die `deposit` Operation mit einem Betrag von -500,0 auf und behandeln Sie die `IllegalArgumentException`, die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
-4. Rufen Sie die `deposit` Operation mit einem Betrag von 500,0 auf und geben Sie den aktualisierten Kontostand auf der Konsole aus.
-5. Rufen Sie die `withdraw` Operation mit einem Betrag von -200,0 auf und behandeln Sie die `IllegalArgumentException`, die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
-6. Rufen Sie die `withdraw` Operation mit einem Betrag von 2000,0 auf und behandeln Sie die `InsufficientFundsException`, die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
-7. Rufen Sie die `withdraw` Operation mit einem Betrag von 500,0 auf und geben Sie den aktualisierten Kontostand auf der Konsole aus.
+2. Erstellen Sie eine neue Instanz der [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Klasse mit einem Kontostand von `1000,0`.
+3. Rufen Sie die [`deposit`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Operation mit einem Betrag von `-500,0` auf und behandeln Sie die [`IllegalArgumentException`](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html), die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
+4. Rufen Sie die [`deposit`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Operation mit einem Betrag von `500,0` auf und geben Sie den aktualisierten Kontostand auf der Konsole aus.
+5. Rufen Sie die [`withdraw`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Operation mit einem Betrag von `-200,0` auf und behandeln Sie die [`IllegalArgumentException`](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html), die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
+6. Rufen Sie die [`withdraw`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Operation mit einem Betrag von `2000,0` auf und behandeln Sie die `InsufficientFundsException`, die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
+7. Rufen Sie die [`withdraw`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Operation mit einem Betrag von `500,0` auf und geben Sie den aktualisierten Kontostand auf der Konsole aus.
