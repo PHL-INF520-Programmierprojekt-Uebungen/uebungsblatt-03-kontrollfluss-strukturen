@@ -35,6 +35,25 @@ The available characters are:
 
 You need to implement the ability activation functionality using Java [`enums`](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html) first.
 
+> **IMPORTANT:** Do not implement the `enums` inside the `Main` class. You can either save them as their own Java file (e.g. `Person.java`) or define them in `Main.java` as a separate `enum` outside the `Main` class.
+
+
+Example of a custom `Enum` stored inside the `Main.java` file:
+```Java
+package de.phl.programmingproject.game;
+
+public class Main {
+    // TODO: create your game characters here. For each character, print the activation of each ability.
+    public static void main(String[] args) {
+
+    }
+}
+
+enum YourEnum{
+    One, Two, Three
+}
+```
+
 ### Tasks
 
 1. Create a Java enum called Person that contains the following values: `MARIO`, `LUIGI`, `PRINCESS_PEACH`, and `BOWSER`. Each value should have a String representation of the person's `name` ("Mario", "Luigi", "Princess Peach", and "Bowser", respectively).
@@ -326,6 +345,8 @@ The class [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/Ban
 However, these operations have not yet been implemented to handle the possible exceptions that may occur when performing these operations.
 
 ### Tasks
+
+> **Note:** To make the test cases pass you may need to print the full error message. For this, print the `Exception` directly to the console: `System.out.println(e);`.
 
 1. Update the [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) class with the following requirements:
         - Modify the [`deposit`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) operation: If the amount to be deposited is negative, the operation should throw an `IllegalArgumentException` with the message "Amount to deposit must be positive".

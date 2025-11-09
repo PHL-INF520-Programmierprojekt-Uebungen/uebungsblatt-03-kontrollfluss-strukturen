@@ -25,9 +25,9 @@ public class NumberGuesserTest extends TestBase {
 
         assertTrue(Pattern.compile("do\\s*\\{", Pattern.CASE_INSENSITIVE).matcher(content).find(),
                 "The 'do-while' loop is missing. Please use a 'do-while' loop to implement the guessing game.");
-        assertTrue(Pattern.compile("(too high|zu hoch)", Pattern.CASE_INSENSITIVE).matcher(content).find(),
+        assertTrue(Pattern.compile("(too high|zu hoch|zu groß|zu gross)", Pattern.CASE_INSENSITIVE).matcher(content).find(),
                 "The output 'too high'/'zu hoch' is missing. Please print 'too high'/'zu hoch' if the user's guess is too high.");
-        assertTrue(Pattern.compile("(too low|zu niedrig)", Pattern.CASE_INSENSITIVE).matcher(content).find(),
+        assertTrue(Pattern.compile("(too low|zu niedrig|zu klein)", Pattern.CASE_INSENSITIVE).matcher(content).find(),
                 "The output 'too low'/'zu niedrig' is missing. Please print 'too low'/'zu niedrig' if the user's guess is too low.");
     }
 }
