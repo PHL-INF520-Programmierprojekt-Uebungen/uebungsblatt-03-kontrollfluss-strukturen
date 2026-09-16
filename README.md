@@ -34,13 +34,14 @@ Die verfügbaren Charaktere sind:
 
 Du musst zuerst die Funktionalität zur Aktivierung der Fähigkeiten mit Java [`enums`](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html) implementieren.
 
-> **WICHTIG:** Implementiert die `enums` nicht innerhalb der `Main`-Klasse. Ihr könnt sie entweder als eigene Java-Datei abspeichern (z.B.: `Person.java`) oder in Datei `Main.java` als eigene `enum` außerhalb der `Main`-Klasse definieren. Ein Beispiel findet ihr unten:
+> **WICHTIG:** Implementiert die `enums` nicht innerhalb der `Main`-Klasse. Ihr könnt sie entweder als eigene Java-Datei abspeichern (z.B.: `Person.java`) oder in der am besten dazugehörigen Datei, z.B. `GameCharacter.java` als eigene `enum` außerhalb der `Main`-Klasse definieren. Ein Beispiel findet ihr unten:
 
-Beispiel einer eigenen `Enum` in der `Main.java` Datei:
+Beispiel einer eigenen `Enum` in der `Klasse.java` Datei:
+
 ```Java
 package de.phl.programmingproject.game;
 
-public class Main {
+public class Klasse {
     // TODO: create your game characters here. For each character, print the activation of each ability.
     public static void main(String[] args) {
         
@@ -68,7 +69,7 @@ enum YourEnum{
    |----------------|---------|-----------------------------------------------------------------|
    | MARIO          | JUMP    | "Mario jumps higher than other persons!"                        |
    | LUIGI          | RUN     | "Luigi runs faster than other persons!"                         |
-   | PRINCESS_PEACH | FLOAT   | "Princess Peach floats in the air!"                             |
+   | PRINCESS_PEACH | FLOAT   | "Peach floats in the air for a short period of time!"                             |
    | BOWSER         | STOMP   | "Bowser stomps on the ground to stun nearby enemies!"           |
 
 4. Verwende in der Methode `activateAbility` eine `switch-case` Anweisung, um die Wirkung der Fähigkeit basierend auf dem bereitgestellten Ability-Argument zu bestimmen.

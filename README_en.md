@@ -35,14 +35,14 @@ The available characters are:
 
 You need to implement the ability activation functionality using Java [`enums`](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html) first.
 
-> **IMPORTANT:** Do not implement the `enums` inside the `Main` class. You can either save them as their own Java file (e.g. `Person.java`) or define them in `Main.java` as a separate `enum` outside the `Main` class.
+> **IMPORTANT:** Do not implement the `enums` inside the `Main` class. You can either save them as their own Java file (e.g. `Person.java`) or define them in a corresponding file, e.g., `GameCharacter.java` as a separate `enum` outside the `Main` class.
 
 
-Example of a custom `Enum` stored inside the `Main.java` file:
+Example of a custom `Enum` stored inside the `Class.java` file:
 ```Java
 package de.phl.programmingproject.game;
 
-public class Main {
+public class Class {
     // TODO: create your game characters here. For each character, print the activation of each ability.
     public static void main(String[] args) {
 
