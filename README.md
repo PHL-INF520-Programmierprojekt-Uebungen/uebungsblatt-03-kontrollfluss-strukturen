@@ -1,7 +1,21 @@
 # Übungsblatt: Kontrollfluss-Strukturen
 [Link to English version](./README_en.md)
 
-In diesem Übungsblatt üben Sie verschiedene Kontrollflussstrukturen.
+In diesem Übungsblatt üben Sie verschiedene Kontrollflussstrukturen. Bearbeiten Sie es in drei Lernabschnitten; nicht alle neun Übungen müssen in einer Sitzung abgeschlossen werden.
+
+| Abschnitt | Übungen | Voraussetzungen | Lernziel |
+|---|---|---|---|
+| A – Entscheidungen | 1–2 | Variablen, Methodenaufrufe, Vergleiche und boolesche Ausdrücke | Entscheidungen mit `if` und `switch` formulieren; Enums verwenden |
+| B – Wiederholungen | 3–6 | Abschnitt A, `for`/`while`, Restwertoperator `%` | Schleifen entwerfen, Randfälle erkennen und Ergebnisse prüfen |
+| C – Fehlerbehandlung | 7–9 | Methoden und Kontrollfluss aus A/B; Einführung in Exceptions | Fehler auslösen, gezielt behandeln und normale von fehlerhaften Abläufen unterscheiden |
+
+**Arbeitsvorschlag:** Beginnen Sie je Abschnitt mit den Übungen 1, 4 beziehungsweise 7. Bearbeiten Sie anschließend die übrigen Übungen des Abschnitts. Die Diskussionen und Erweiterungen dienen der Vertiefung; verbindliche Abgabeumfänge und Termine nennt die Lehrveranstaltung.
+
+Die Abschnitte verwenden getrennte Java-Pakete. Sie können im Test-Explorer die jeweilige Testklasse einzeln starten (siehe [Testanleitung](TESTEN.md)). Noch unbearbeitete Abschnitte dürfen rote Tests zeigen. Zusätzliche Compilerfehler in anderen Dateien müssen trotzdem zuerst behoben werden.
+
+## Abschnitt A – Entscheidungen und Enums
+
+In Übung 4 wird eine Menge (`Set`) verwendet; die Einführung ist dort verlinkt. Eine Menge enthält ein Element höchstens einmal. Das Implementieren einer eigenen Collection ist hier nicht verlangt.
 
 
 ## Übung 1: Achterbahn
@@ -44,7 +58,7 @@ package de.phl.programmingproject.game;
 public class Klasse {
     // TODO: create your game characters here. For each character, print the activation of each ability.
     public static void main(String[] args) {
-        
+
     }
 }
 
@@ -82,9 +96,13 @@ enum YourEnum{
    Diskutiere, wie gut das Programm in Bezug auf Wartungsfähigkeit funktioniert, wenn eine neue Person hinzugefügt wird.
 
 
+## Abschnitt B – Schleifen
+
+Wählen Sie vor dem Programmieren Startwert, Abbruchbedingung und Veränderung der Schleifenvariablen. Prüfen Sie neben einem typischen Wert auch die kleinste zulässige Eingabe.
+
 ## Übung 3: Summe der Primzahlen
 
-Ihre Aufgabe besteht darin, ein Programm zu schreiben, das die Summe der ersten `n` Primzahlen berechnet, 
+Ihre Aufgabe besteht darin, ein Programm zu schreiben, das die Summe der ersten `n` Primzahlen berechnet,
 wobei `n` auf 20 gesetzt ist. Eine Primzahl ist eine Zahl, die nur durch 1 und sich selbst ohne Rest teilbar ist.
 
 ### Aufgaben
@@ -106,9 +124,9 @@ Implementieren Sie das Programm in der [`MathHelper`](src/main/java/de/phl/progr
 
 1. Implementieren Sie die Operation [`calculateSumOfDigits`](src/main/java/de/phl/programmingproject/math/MathHelper.java), um die Summe der Ziffern der Zahl `867194` mit einer `while`-Schleife zu berechnen.
 2. Geben Sie die Summe der Ziffern, die von der Operation [`calculateSumOfDigits`](src/main/java/de/phl/programmingproject/math/MathHelper.java) berechnet wurde, in der Konsole aus.
-3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen.  
-Wenn Sie nicht wissen, wie man mit `Set` arbeitet, können Sie sich hier eine Beschreibung durchlesen:  
-- [Set in Java (GeeksforGeeks)](https://www.geeksforgeeks.org/set-in-java/)  
+3. Implementieren Sie eine Operation `Set<Integer> calculateReverseSumOfDigits(final int number)`, die die möglichen Zahlen berechnet (reverse-engineering), für die `number` die Summe der Ziffern ist, und geben sie als `Set` zurück. Sie müssen nur die Zahlen bis 10000 berücksichtigen.
+Wenn Sie nicht wissen, wie man mit `Set` arbeitet, können Sie sich hier eine Beschreibung durchlesen:
+- [Set in Java (GeeksforGeeks)](https://www.geeksforgeeks.org/set-in-java/)
 - [Java Set Tutorial (DigitalOcean)](https://www.digitalocean.com/community/tutorials/java-set)
 
 ## Übung 5: Number Guesser
@@ -155,6 +173,10 @@ FizzBuzz
 ...
 
 Implementieren Sie das Programm in der [`FizzBuzz`](src/main/java/de/phl/programmingproject/fizzbuzz/FizzBuzz.java) Klasse, die sich im Paket [`de.phl.programmingproject.fizzbuzz`](src/main/java/de/phl/programmingproject/fizzbuzz) befindet.
+
+## Abschnitt C – Exceptions
+
+Beginnen Sie diesen Abschnitt nach der Einführung in `throw`, `try` und `catch`. Überlegen Sie jeweils, welche Methode einen Fehler meldet und welche Methode ihn sinnvoll behandeln kann.
 
 ## Übung 7: Pizza Desaster
 
@@ -340,8 +362,8 @@ public class ExceptionHandlingExample {
 
 ## Übung 9: Bankkonto-Ausnahmen
 
-Ihre Aufgabe ist es, eine Klasse zur Darstellung eines Bankkontos zu implementieren. 
-Ihre `BankAccount` Klasse hat ein `balance` Feld, das den aktuellen Kontostand enthält. 
+Ihre Aufgabe ist es, eine Klasse zur Darstellung eines Bankkontos zu implementieren.
+Ihre `BankAccount` Klasse hat ein `balance` Feld, das den aktuellen Kontostand enthält.
 Die `BankAccount` Klasse hat auch zwei Operationen, `deposit` und `withdraw`, die Einzahlungen und Abhebungen vom Konto ermöglichen.
 
 Die Klasse wird als 'Stub' im Paket `de.phl.programmingproject.exceptions` bereitgestellt.
@@ -360,7 +382,7 @@ Diese Operationen wurden jedoch noch nicht implementiert, um die möglichen Ausn
                public MyException(String message) {
                    super(message);
                }
-           } 
+           }
         ```
 2. Erstellen Sie eine neue Instanz der [`BankAccount`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Klasse mit einem Kontostand von `1000,0`.
 3. Rufen Sie die [`deposit`](src/main/java/de/phl/programmingproject/exceptions/BankAccount.java) Operation mit einem Betrag von `-500,0` auf und behandeln Sie die [`IllegalArgumentException`](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html), die geworfen wird, indem Sie die Fehlermeldung auf der Konsole ausgeben.
