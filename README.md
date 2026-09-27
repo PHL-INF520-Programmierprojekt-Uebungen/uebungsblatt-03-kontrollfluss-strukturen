@@ -5,17 +5,16 @@ In diesem Übungsblatt üben Sie verschiedene Kontrollflussstrukturen. Bearbeite
 
 | Abschnitt | Übungen | Voraussetzungen | Lernziel |
 |---|---|---|---|
-| A – Entscheidungen | 1–2 | Variablen, Methodenaufrufe, Vergleiche und boolesche Ausdrücke | Entscheidungen mit `if` und `switch` formulieren; Enums verwenden |
+| A – Entscheidungen | 1–2 | Variablen, Methodenaufrufe, Vergleiche und boolesche Ausdrücke; für Übung 2 außerdem Enums mit Werten und eigene Klassen mit Attributen und Methoden | Entscheidungen mit `if` und `switch` formulieren; Enums verwenden |
 | B – Wiederholungen | 3–6 | Abschnitt A, `for`/`while`, Restwertoperator `%` | Schleifen entwerfen, Randfälle erkennen und Ergebnisse prüfen |
 | C – Fehlerbehandlung | 7–9 | Methoden und Kontrollfluss aus A/B; Einführung in Exceptions | Fehler auslösen, gezielt behandeln und normale von fehlerhaften Abläufen unterscheiden |
 
 **Arbeitsvorschlag:** Beginnen Sie je Abschnitt mit den Übungen 1, 4 beziehungsweise 7. Bearbeiten Sie anschließend die übrigen Übungen des Abschnitts. Die Diskussionen und Erweiterungen dienen der Vertiefung; verbindliche Abgabeumfänge und Termine nennt die Lehrveranstaltung.
 
-Die Abschnitte verwenden getrennte Java-Pakete. Sie können im Test-Explorer die jeweilige Testklasse einzeln starten (siehe [Testanleitung](TESTEN.md)). Noch unbearbeitete Abschnitte dürfen rote Tests zeigen. Zusätzliche Compilerfehler in anderen Dateien müssen trotzdem zuerst behoben werden.
+Die Abschnitte verwenden getrennte Java-Pakete. Sie können im Test-Explorer die jeweilige Testklasse einzeln starten (siehe [Testanleitung](TESTEN.md)). Noch unbearbeitete Abschnitte dürfen rote Tests zeigen. Die IDE-Vorbereitungsaufgabe kompiliert nicht das gesamte Projekt. Compilerfehler können dennoch betroffene Tests oder den Java-Projektimport verhindern; der vollständige Gradle-Testlauf erfordert kompilierbare Quellen.
 
 ## Abschnitt A – Entscheidungen und Enums
 
-In Übung 4 wird eine Menge (`Set`) verwendet; die Einführung ist dort verlinkt. Eine Menge enthält ein Element höchstens einmal. Das Implementieren einer eigenen Collection ist hier nicht verlangt.
 
 
 ## Übung 1: Achterbahn
@@ -97,6 +96,8 @@ enum YourEnum{
 
 
 ## Abschnitt B – Schleifen
+
+In Übung 4 wird eine Menge (`Set`) verwendet; die Einführung ist dort verlinkt. Eine Menge enthält ein Element höchstens einmal. Das Implementieren einer eigenen Collection ist hier nicht verlangt.
 
 Wählen Sie vor dem Programmieren Startwert, Abbruchbedingung und Veränderung der Schleifenvariablen. Prüfen Sie neben einem typischen Wert auch die kleinste zulässige Eingabe.
 

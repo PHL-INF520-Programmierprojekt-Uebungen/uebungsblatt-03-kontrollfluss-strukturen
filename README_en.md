@@ -1,3 +1,5 @@
+> **Stand der Übersetzung:** Diese englische Fassung bildet die neue Gliederung noch nicht ab. Maßgeblich ist die aktuelle [deutsche Aufgabenstellung](README.md).
+
 # Exercise Sheet: Control Flow Structures
 [Link to German Version](./README.md)
 
